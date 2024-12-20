@@ -1,5 +1,5 @@
 #This script gets coefficients of change in % cover over time on vertical surfaces for each of the sessile species 
-#in the larger Sebens long-term monitoring project
+#in the larger Ken Sebens long-term monitoring project. These data will be used in chapter 2 of my dissertation.
 
 library(readr)
 library(glmmTMB)
