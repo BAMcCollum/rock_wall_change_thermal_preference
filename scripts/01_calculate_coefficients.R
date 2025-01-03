@@ -49,7 +49,9 @@ substrate_long <- substrate |>
 
 View (substrate_long)
 
-write.csv(substrate_long,"~/Downloads/substrate_long.csv", row.names = FALSE)
+change_coefficients <- substrate_long
+
+#write.csv(change_coefficients,"data/change_coefficients.csv", row.names = FALSE)
 
 #The species behaving badly:
 
