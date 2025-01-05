@@ -13,7 +13,6 @@ indices <- read_csv("data/Occurrence_based_species_thermal_indicies_Photos_20250
 
 # First, translate indices species into coef species names
 indices <- indices |>
-  rename(co_occuring_species = gen_spp) |>
   left_join(dict) |>
   rename(species = coefficients_species) |>
   filter(!is.na(species))
