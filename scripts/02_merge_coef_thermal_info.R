@@ -12,14 +12,15 @@ indices <- read_csv("data/Occurrence_based_species_thermal_indicies_Photos_20250
 
 
 # First, translate indices species into coef species names
-indices <- indices |>
+indices_joined <- indices |>
   left_join(dict) |>
   rename(species = coefficients_species) |>
-  filter(!is.na(species))
+  filter(!is.na(species)) |>
+  relocate(species)
 
 # Then, join the indices to the coefs
 
-combined_data <- left_join(sp_coefs, indices) |>
+combined_data <- left_join(sp_coefs, indices_joined) |>
   janitor::remove_empty(which = "cols")
 
 View(combined_data)
