@@ -44,7 +44,7 @@ substrate_long <- substrate |>
   select(-data, -mod, -term) |>
   print (n = 63)
 
-View (substrate_long)
+View(substrate_long)
 
 #write.csv(substrate_long,"~/Downloads/substrate_long.csv", row.names = FALSE)
 
