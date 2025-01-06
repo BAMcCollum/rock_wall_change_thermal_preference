@@ -13,26 +13,27 @@ clathromorphum_sp,Clathromorphum circumscriptum,Cliona celata
 cliona_spp,Cliona celata,Dendrodoa carnea
 dendrodoa_carnea,Dendrodoa carnea,Didemnum albidum
 didemnum_albidum,Didemnum albidum,Didemnum vexillum
-diplosoma_listerianum,Diplosoma listerianum,Diplosoma listerianum
-edwardsiella_lineata,Edwardsiella lineata,Edwardsiella lineata
-encrusting_bryozoan,,Gersemia rubiformis
-erect_bryozoan_sub,,Halichondria (Halichondria) panicea
-green_algae_sub,,Haliclona (Haliclona) oculata
-halichondria_panicea,Halichondria (Halichondria) panicea,Halocynthia pyriformis
-haliclona_oculata,Haliclona (Haliclona) oculata,Hymedesmia (Hymedesmia) paupertas
-halisarca_nahantensis,,Isodictya palmata
-halocynthia_pyriformis,Halocynthia pyriformis,Leucosolenia botryoides
-hyd_bry_complex,,Lithothamnion glaciale
-hydroid_sub,,Metridium senile
-hymedesmia_sp,Hymedesmia (Hymedesmia) paupertas,Modiolus modiolus
-isodictya_spp,Isodictya palmata,Molgula citrina
-leucosolenia_spp,Leucosolenia botryoides,Molgula manhattensis
-lithothamnion_spp,Lithothamnion glaciale,Mytilus edulis
-metridium_sub,Metridium senile,Peyssonnelia rosenvingei
-modiolus_modiolus,Modiolus modiolus,Spirorbis (Spirorbis) spirorbis
-molgula_citrina,Molgula citrina,Styela clava
-mytilus_edulis,Mytilus edulis,Sycon ciliatum
-orange_sponge_crust,,Ectopleura crocea
+Didemnum vexillum,Didemnum vexillum,Diplosoma listerianum
+diplosoma_listerianum,Diplosoma listerianum,Edwardsiella lineata
+edwardsiella_lineata,Edwardsiella lineata,Gersemia rubiformis
+encrusting_bryozoan,,Halichondria (Halichondria) panicea
+erect_bryozoan_sub,,Haliclona (Haliclona) oculata
+green_algae_sub,,Halocynthia pyriformis
+halichondria_panicea,Halichondria (Halichondria) panicea,Hymedesmia (Hymedesmia) paupertas
+haliclona_oculata,Haliclona (Haliclona) oculata,Isodictya palmata
+halisarca_nahantensis,,Leucosolenia botryoides
+halocynthia_pyriformis,Halocynthia pyriformis,Lithothamnion glaciale
+hyd_bry_complex,,Metridium senile
+hydroid_sub,,Modiolus modiolus
+hymedesmia_sp,Hymedesmia (Hymedesmia) paupertas,Molgula citrina
+isodictya_spp,Isodictya palmata,Molgula manhattensis
+leucosolenia_spp,Leucosolenia botryoides,Mytilus edulis
+lithothamnion_spp,Lithothamnion glaciale,Peyssonnelia rosenvingei
+metridium_sub,Metridium senile,Spirorbis (Spirorbis) spirorbis
+modiolus_modiolus,Modiolus modiolus,Styela clava
+molgula_citrina,Molgula citrina,Sycon ciliatum
+mytilus_edulis,Mytilus edulis,Ectopleura crocea
+orange_sponge_crust,,
 peysonnelia,Peyssonnelia rosenvingei,
 phymatolithon_sp,,
 red_algae_sub,,
