@@ -22,4 +22,5 @@ indices <- indices |>
 combined_data <- left_join(sp_coefs, indices) |>
   janitor::remove_empty(which = "cols")
 
+View(combined_data)
 write_csv(combined_data, "data/coefs_with_indices.csv")
