@@ -16,9 +16,9 @@ library(broom)
 
 coefs_with_indicies <- read_csv("data/coefs_with_indices.csv")
 
-ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmean_mean, estimate))+
+ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmean_mean, estimate, color = species))+
   geom_point()+
-  stat_smooth(method = "lm")
+  stat_smooth(method = "lm") #Ideally would like to color by functional group
 
 mod1 <- lm(estimate ~ BO21_tempmax_bdmean_mean, data = coefs_with_indicies)
 
@@ -31,3 +31,7 @@ Anova(mod1)
 summary(mod1)
 tidy(mod1)
 glance(mod1)
+
+ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmean_mean, estimate))+
+  geom_point()+
+  stat_smooth(method = "lm")
