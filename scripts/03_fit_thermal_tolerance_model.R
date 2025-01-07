@@ -16,9 +16,9 @@ library(broom)
 
 coefs_with_indicies <- read_csv("data/coefs_with_indices.csv")
 
-ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmean_mean, estimate, color = species))+
+ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmean_mean, estimate))+
   geom_point()+
-  stat_smooth(method = "lm") #Ideally would like to color by functional group
+  stat_smooth(method = "lm") #Ideally would like to color by functional group, depth strata
 
 mod1 <- lm(estimate ~ BO21_tempmax_bdmean_mean, data = coefs_with_indicies)
 
@@ -32,6 +32,8 @@ summary(mod1)
 tidy(mod1)
 glance(mod1)
 
-ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmean_mean, estimate))+
+ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmean_mean, estimate, label = gen_spp))+
   geom_point()+
-  stat_smooth(method = "lm")
+  geom_text(hjust = 0, nudge_x = 0.05)+
+  stat_smooth(method = "lm")+
+  ggsave("figures/coefs_with_indicies.pdf", width = 20, height = 20, units = "cm")
