@@ -36,4 +36,6 @@ ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmean_mean, estimate, label = gen_
   geom_point()+
   geom_text(hjust = 0, nudge_x = 0.05)+
   stat_smooth(method = "lm")+
-  ggsave("figures/coefs_with_indicies.pdf", width = 20, height = 20, units = "cm")
+  labs(x = "Max Temp at mean bottom depth in (°C)",  y = "Coefficient of change over 47 years",
+       title ="Thermal Tolerance and Change in Abundance")+  
+  ggsave("figures/coefs_with_indicies.pdf", width = 25, height = 20, units = "cm")
