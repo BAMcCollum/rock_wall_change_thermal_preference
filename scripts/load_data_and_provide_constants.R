@@ -15,7 +15,8 @@ substrate <-
   group_by(site, year) |>
   slice_tail() |> # get second sample point if there are 2
   ungroup() |>
-  mutate(year_cent = year - mean(year))
+  mutate(year_cent = year - mean(year)) |>
+  select(-hymedesmia_sp)
 
 
 substrate_long <- substrate |>
