@@ -40,7 +40,33 @@ species_data_as_list <-
     ggsave(glue("figures/raw_timeseries/{sp}.pdf"),
            width = 6, height = 6)
   })
+
+
   
+# show four representative species
+substrate_long |>
+  filter(species %in% c("phymatolithon_sp", 
+                        "tubularia_sub",
+                        "didemnum_vexillum",
+                        "diplosoma_listerianum")) |>
+  # change species names using mutate and case_when()
+  mutate(species = 
+           case_when(
+             species == "phymatolithon_sp" ~ "Phmatolithon sp.", 
+             species == "tubularia_sub" ~ "Ectopleura sp.", 
+             species == "didemnum_vexillum" ~ "Didemnum vexillum", 
+             species == "diplosoma_listerianum" ~" Diplosoma listerianum"
+           )) |>
+  # plot
+ggplot(aes(x = year, y = proportion*100, #sub in species name
+             color = site)) +
+  geom_line() +
+  labs(x = "Year",
+       y = "Percent Cover") +
+  facet_wrap(vars(species))
+
+ggsave(glue("figures/four_representative_species.pdf"),
+       width = 8, height = 6)
 
 # 
 # 
