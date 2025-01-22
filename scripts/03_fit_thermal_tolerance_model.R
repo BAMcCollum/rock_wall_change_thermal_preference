@@ -13,6 +13,7 @@ library(purrr)
 library(performance)
 library(car)
 library(broom)
+library(ggrepel)
 
 # load data and set themes
 source("scripts/load_data_and_provide_constants.R")
@@ -39,7 +40,11 @@ glance(mod1)
 ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmean_mean, estimate, label = gen_spp))+
   geom_point()+
   stat_smooth(method = "lm")+
-  geom_text_repel()+
-  labs(x = "Max Temperature in (°C) at mean bottom depth",  y = "Coefficient of change over 47 years",
-       title ="Thermal Preference and Change in Abundance")#+  
-  ggsave("figures/coefs_with_indicies.pdf", width = 45, height = 35, units = "cm")
+  geom_text_repel(size = 7)+
+  labs(x = "Max Temperature in (°C) at mean bottom depth",  
+       y = "Coefficient of change over 47 years",
+       title ="Thermal Preference and Change in Abundance")#
+
+ggsave("figures/coefs_with_indicies.pdf", 
+       width = 40, height = 30, units = "cm")
+
