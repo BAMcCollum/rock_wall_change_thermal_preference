@@ -7,33 +7,24 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 
-sebens_substrate_proportion <-read_csv("data/sebens_substrate_proportion.csv")
-View(sebens_substrate_proportion)
-
-sebens_substrate_proportion <-
-  sebens_substrate_proportion |>
-  filter(year > 1970,
-         month %in% c(6:9),
-         angle == "vertical") |>
-  mutate(year_cent = year - mean(year))
-
-str(sebens_substrate_proportion)
+# load data and set themes
+source("scripts/load_data_and_provide_constants.R")
 
 
 #Use corrected names from coefs_with_indicies.csv
 
-Alcyonium_siderium_plot <- ggplot(data = sebens_substrate_proportion,
+ggplot(data = substrate,
        aes(x = year, y = alcyonium_sub, #sub in species name
            color = site)) +
   geom_line()+
   labs(x = "Year",
        y = "Percent Cover of *Alcyonium siderium*")+ #sub in species name
-  theme(axis.title.y = ggtext::element_markdown())+  
-  ggsave("figures/Alcyonium_siderium_plot.pdf")
+  theme(axis.title.y = ggtext::element_markdown())
 
-Alcyonium_siderium_plot
+ggsave("figures/Alcyonium_siderium_plot.pdf")
 
-Anomia_simplex_plot <- ggplot(data = sebens_substrate_proportion,
+
+Anomia_simplex_plot <- ggplot(data = substrate,
                               aes(x = year, y = anomia_spp, #sub in species name
                                   color = site)) +
   geom_line()+
@@ -44,7 +35,7 @@ Anomia_simplex_plot <- ggplot(data = sebens_substrate_proportion,
 
 Anomia_simplex_plot
 
-Aplidium_glabrum_plot <- ggplot(data = sebens_substrate_proportion,
+Aplidium_glabrum_plot <- ggplot(data = substrate,
                                 aes(x = year, y = aplidium_glabrum, #sub in species name
                                     color = site)) +
   geom_line()+
@@ -55,7 +46,7 @@ Aplidium_glabrum_plot <- ggplot(data = sebens_substrate_proportion,
 
 Aplidium_glabrum_plot
 
-Balanus_balanus_plot <- ggplot(data = sebens_substrate_proportion,
+Balanus_balanus_plot <- ggplot(data = substrate,
                                aes(x = year, y = balanus_balanus, #sub in species name
                                    color = site)) +
   geom_line()+
@@ -66,7 +57,7 @@ Balanus_balanus_plot <- ggplot(data = sebens_substrate_proportion,
 
 Balanus_balanus_plot
 
-Boltenia_echinata_plot <- ggplot(data = sebens_substrate_proportion,
+Boltenia_echinata_plot <- ggplot(data = substrate,
                                  aes(x = year, y = boltenia_echinata, #sub in species name
                                      color = site)) +
   geom_line()+
@@ -77,7 +68,7 @@ Boltenia_echinata_plot <- ggplot(data = sebens_substrate_proportion,
 
 Boltenia_echinata_plot
 
-Boltenia_ovifera_plot <- ggplot(data = sebens_substrate_proportion,
+Boltenia_ovifera_plot <- ggplot(data = substrate,
                                 aes(x = year, y = boltenia_ovifera, #sub in species name
                                     color = site)) +
   geom_line()+
@@ -88,7 +79,7 @@ Boltenia_ovifera_plot <- ggplot(data = sebens_substrate_proportion,
 
 Boltenia_ovifera_plot
 
-Botrylloides_violaceus_plot <- ggplot(data = sebens_substrate_proportion,
+Botrylloides_violaceus_plot <- ggplot(data = substrate,
                                       aes(x = year, y = botrylloides_sp, #sub in species name
                                           color = site)) +
   geom_line()+
@@ -99,7 +90,7 @@ Botrylloides_violaceus_plot <- ggplot(data = sebens_substrate_proportion,
 
 Botrylloides_violaceus_plot
 
-Botryllus_schlosseri_plot <- ggplot(data = sebens_substrate_proportion,
+Botryllus_schlosseri_plot <- ggplot(data = substrate,
                                     aes(x = year, y = botryllus_schlosseri, #sub in species name
                                         color = site)) +
   geom_line()+
@@ -110,7 +101,7 @@ Botryllus_schlosseri_plot <- ggplot(data = sebens_substrate_proportion,
 
 Botryllus_schlosseri_plot
 
-Clathromorphum_circumscriptum_plot <- ggplot(data = sebens_substrate_proportion,
+Clathromorphum_circumscriptum_plot <- ggplot(data = substrate,
                                         aes(x = year, y = clathromorphum_sp, #sub in species name
                                             color = site)) +
   geom_line()+
@@ -121,7 +112,7 @@ Clathromorphum_circumscriptum_plot <- ggplot(data = sebens_substrate_proportion,
 
 Clathromorphum_circumscriptum_plot
 
-Cliona_celata_plot <- ggplot(data = sebens_substrate_proportion,
+Cliona_celata_plot <- ggplot(data = substrate,
                              aes(x = year, y = cliona_spp, #sub in species name
                                  color = site)) +
   geom_line()+
@@ -132,7 +123,7 @@ Cliona_celata_plot <- ggplot(data = sebens_substrate_proportion,
 
 Cliona_celata_plot
 
-Dendrodoa_carnea_plot <- ggplot(data = sebens_substrate_proportion,
+Dendrodoa_carnea_plot <- ggplot(data = substrate,
                                 aes(x = year, y = dendrodoa_carnea, #sub in species name
                                     color = site)) +
   geom_line()+
@@ -143,7 +134,7 @@ Dendrodoa_carnea_plot <- ggplot(data = sebens_substrate_proportion,
 
 Dendrodoa_carnea_plot
 
-Didemnum_albidum_plot <- ggplot(data = sebens_substrate_proportion,
+Didemnum_albidum_plot <- ggplot(data = substrate,
                                 aes(x = year, y = didemnum_albidum, #sub in species name
                                     color = site)) +
   geom_line()+
@@ -154,7 +145,7 @@ Didemnum_albidum_plot <- ggplot(data = sebens_substrate_proportion,
 
 Didemnum_albidum_plot
 
-Didemnum_vexillum_plot <- ggplot(data = sebens_substrate_proportion,
+Didemnum_vexillum_plot <- ggplot(data = substrate,
                                  aes(x = year, y = didemnum_vexillum, #sub in species name
                                      color = site)) +
   geom_line()+
@@ -165,7 +156,7 @@ Didemnum_vexillum_plot <- ggplot(data = sebens_substrate_proportion,
 
 Didemnum_vexillum_plot
 
-Dilosoma_listerianum_plot <- ggplot(data = sebens_substrate_proportion,
+Dilosoma_listerianum_plot <- ggplot(data = substrate,
                                     aes(x = year, y = diplosoma_listerianum, #sub in species name
                                         color = site)) +
   geom_line()+
@@ -176,7 +167,7 @@ Dilosoma_listerianum_plot <- ggplot(data = sebens_substrate_proportion,
 
 Dilosoma_listerianum_plot
 
-Edwardsiella_lineata_plot <- ggplot(data = sebens_substrate_proportion,
+Edwardsiella_lineata_plot <- ggplot(data = substrate,
                                     aes(x = year, y = edwardsiella_lineata, #sub in species name
                                         color = site)) +
   geom_line()+
@@ -187,7 +178,7 @@ Edwardsiella_lineata_plot <- ggplot(data = sebens_substrate_proportion,
 
 Edwardsiella_lineata_plot
 
-Halichondria_panicea_plot <- ggplot(data = sebens_substrate_proportion,
+Halichondria_panicea_plot <- ggplot(data = substrate,
                                     aes(x = year, y = halichondria_panicea, #sub in species name
                                         color = site)) +
   geom_line()+
@@ -198,7 +189,7 @@ Halichondria_panicea_plot <- ggplot(data = sebens_substrate_proportion,
 
 Halichondria_panicea_plot
 
-Haliclona_oculata_plot <- ggplot(data = sebens_substrate_proportion,
+Haliclona_oculata_plot <- ggplot(data = substrate,
                                  aes(x = year, y = haliclona_oculata, #sub in species name
                                      color = site)) +
   geom_line()+
@@ -209,7 +200,7 @@ Haliclona_oculata_plot <- ggplot(data = sebens_substrate_proportion,
 
 Haliclona_oculata_plot
 
-Halocynthia_pyriformis_plot <- ggplot(data = sebens_substrate_proportion,
+Halocynthia_pyriformis_plot <- ggplot(data = substrate,
                                       aes(x = year, y = halocynthia_pyriformis, #sub in species name
                                           color = site)) +
   geom_line()+
@@ -220,7 +211,7 @@ Halocynthia_pyriformis_plot <- ggplot(data = sebens_substrate_proportion,
 
 Halocynthia_pyriformis_plot
 
-Hymedesmia_paupertas_plot <- ggplot(data = sebens_substrate_proportion,
+Hymedesmia_paupertas_plot <- ggplot(data = substrate,
                                     aes(x = year, y = hymedesmia_sp, #sub in species name
                                         color = site)) +
   geom_line()+
@@ -231,7 +222,7 @@ Hymedesmia_paupertas_plot <- ggplot(data = sebens_substrate_proportion,
 
 Hymedesmia_paupertas_plot #not in any photo
 
-Isodictya_palmata_plot <- ggplot(data = sebens_substrate_proportion,
+Isodictya_palmata_plot <- ggplot(data = substrate,
                                  aes(x = year, y = isodictya_spp, #sub in species name
                                      color = site)) +
   geom_line()+
@@ -242,7 +233,7 @@ Isodictya_palmata_plot <- ggplot(data = sebens_substrate_proportion,
 
 Isodictya_palmata_plot
 
-Leucosolenia_botryoides_plot <- ggplot(data = sebens_substrate_proportion,
+Leucosolenia_botryoides_plot <- ggplot(data = substrate,
                                        aes(x = year, y = leucosolenia_spp, #sub in species name
                                            color = site)) +
   geom_line()+
@@ -253,7 +244,7 @@ Leucosolenia_botryoides_plot <- ggplot(data = sebens_substrate_proportion,
 
 Leucosolenia_botryoides_plot
 
-Lithothamnion_glaciale_plot <- ggplot(data = sebens_substrate_proportion,
+Lithothamnion_glaciale_plot <- ggplot(data = substrate,
                                       aes(x = year, y = lithothamnion_spp, #sub in species name
                                           color = site)) +
   geom_line()+
@@ -264,7 +255,7 @@ Lithothamnion_glaciale_plot <- ggplot(data = sebens_substrate_proportion,
 
 Lithothamnion_glaciale_plot
 
-Metriduim_senile_plot <- ggplot(data = sebens_substrate_proportion,
+Metriduim_senile_plot <- ggplot(data = substrate,
                                 aes(x = year, y = metridium_sub, #sub in species name
                                     color = site)) +
   geom_line()+
@@ -275,7 +266,7 @@ Metriduim_senile_plot <- ggplot(data = sebens_substrate_proportion,
 
 Metriduim_senile_plot
 
-Modiolus_modiolus_plot <- ggplot(data = sebens_substrate_proportion,
+Modiolus_modiolus_plot <- ggplot(data = substrate,
                                  aes(x = year, y = modiolus_modiolus, #sub in species name
                                      color = site)) +
   geom_line()+
@@ -286,7 +277,7 @@ Modiolus_modiolus_plot <- ggplot(data = sebens_substrate_proportion,
 
 Modiolus_modiolus_plot
 
-Mogula_citrina_plot <- ggplot(data = sebens_substrate_proportion,
+Mogula_citrina_plot <- ggplot(data = substrate,
                               aes(x = year, y = molgula_citrina, #sub in species name
                                   color = site)) +
   geom_line()+
@@ -297,7 +288,7 @@ Mogula_citrina_plot <- ggplot(data = sebens_substrate_proportion,
 
 Mogula_citrina_plot
 
-Mytilus_edulis_plot <- ggplot(data = sebens_substrate_proportion,
+Mytilus_edulis_plot <- ggplot(data = substrate,
                               aes(x = year, y = mytilus_edulis, #sub in species name
                                   color = site)) +
   geom_line()+
@@ -308,7 +299,7 @@ Mytilus_edulis_plot <- ggplot(data = sebens_substrate_proportion,
 
 Mytilus_edulis_plot
 
-Peyssonnelia_rosenvingei_plot <- ggplot(data = sebens_substrate_proportion,
+Peyssonnelia_rosenvingei_plot <- ggplot(data = substrate,
                                         aes(x = year, y = peysonnelia, #sub in species name
                                             color = site)) +
   geom_line()+
@@ -319,7 +310,7 @@ Peyssonnelia_rosenvingei_plot <- ggplot(data = sebens_substrate_proportion,
 
 Peyssonnelia_rosenvingei_plot
 
-Spirorbis_spirorbis_plot <- ggplot(data = sebens_substrate_proportion,
+Spirorbis_spirorbis_plot <- ggplot(data = substrate,
                                    aes(x = year, y = spirorbis_spp, #sub in species name
                                        color = site)) +
   geom_line()+
@@ -330,7 +321,7 @@ Spirorbis_spirorbis_plot <- ggplot(data = sebens_substrate_proportion,
 
 Spirorbis_spirorbis_plot
 
-Styela_clava_plot <- ggplot(data = sebens_substrate_proportion,
+Styela_clava_plot <- ggplot(data = substrate,
                             aes(x = year, y = styela_sp, #sub in species name
                                 color = site)) +
   geom_line()+
@@ -341,7 +332,7 @@ Styela_clava_plot <- ggplot(data = sebens_substrate_proportion,
 
 Styela_clava_plot
 
-Ectopleura_crocea_plot <- ggplot(data = sebens_substrate_proportion,
+Ectopleura_crocea_plot <- ggplot(data = substrate,
                                  aes(x = year, y = tubularia_sub, #sub in species name
                                      color = site)) +
   geom_line()+

@@ -15,21 +15,10 @@ library(purrr)
 library(broom.mixed)
 library(broom)
 
-substrate <- 
-  read_csv("data/sebens_substrate_proportion.csv") |>
-  filter(year > 1970,
-         month %in% c(6:9),
-         angle == "vertical") |>
-  mutate(year_cent = year - mean(year))
+# load the data
+source("scripts/load_data_and_provide_constants.R")
 
-View(substrate)
-
-substrate_long <- substrate |>
-  
-  # pivot longer so attributes (i.e., species) are in rows  
-  pivot_longer(alcyonium_sub : tubularia_sub,
-               names_to = "species",
-               values_to = "proportion") |>
+substrate_long <- substrate_long |>
   
   # fit a model to each attribute
   group_by(species) |>

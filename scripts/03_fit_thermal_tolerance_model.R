@@ -14,6 +14,10 @@ library(performance)
 library(car)
 library(broom)
 
+# load data and set themes
+source("scripts/load_data_and_provide_constants.R")
+
+
 coefs_with_indicies <- read_csv("data/coefs_with_indices.csv")
 
 ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmean_mean, estimate))+
