@@ -52,13 +52,13 @@ substrate_long |>
   # change species names using mutate and case_when()
   mutate(species = 
            case_when(
-             species == "phymatolithon_sp" ~ "Phmatolithon sp.", 
-             species == "tubularia_sub" ~ "Ectopleura sp.", 
+             species == "phymatolithon_sp" ~ "Phymatolithon sp.", 
+             species == "tubularia_sub" ~ "Ectopleura crocea.", 
              species == "didemnum_vexillum" ~ "Didemnum vexillum", 
-             species == "diplosoma_listerianum" ~" Diplosoma listerianum"
+             species == "diplosoma_listerianum" ~ "Diplosoma listerianum"
            )) |>
   # plot
-ggplot(aes(x = year, y = proportion*100, #sub in species name
+ggplot(aes(x = year, y = proportion*100,
              color = site)) +
   geom_line() +
   labs(x = "Year",
