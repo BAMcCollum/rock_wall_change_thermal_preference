@@ -43,22 +43,25 @@ species_data_as_list <-
 
 
   
-# show four representative species
+# show representative species
+
+str(substrate)
+
 substrate_long |>
-  filter(species %in% c("phymatolithon_sp", 
-                        "tubularia_sub",
+  filter(species %in% c("hyd_bry_complex", 
                         "didemnum_vexillum",
-                        "diplosoma_listerianum")) |>
+                        "mytilus_edulis",
+                        "lithothamnion_spp")) |>
   # change species names using mutate and case_when()
   mutate(species = 
            case_when(
-             species == "phymatolithon_sp" ~ "Phymatolithon sp.", 
-             species == "tubularia_sub" ~ "Ectopleura crocea.", 
+             species == "hyd_bry_complex" ~ "Hydrozoan/Bryozoan Complex", 
              species == "didemnum_vexillum" ~ "Didemnum vexillum", 
-             species == "diplosoma_listerianum" ~ "Diplosoma listerianum"
+             species == "mytilus_edulis" ~ "Mytilus edulis",
+             species == "lithothamnion_spp" ~ "Lithothamnion glaciale",
            )) |>
   # plot
-ggplot(aes(x = year, y = proportion*100,
+  ggplot(aes(x = year, y = proportion*100,
              color = site)) +
   geom_line() +
   labs(x = "Year",
@@ -66,6 +69,31 @@ ggplot(aes(x = year, y = proportion*100,
   facet_wrap(vars(species))
 
 ggsave(glue("figures/four_representative_species.pdf"),
+       width = 8, height = 6)
+
+
+substrate_long |>
+  filter(species %in% c("peysonnelia", 
+                        "clathromorphum_sp",
+                        "phymatolithon_sp",
+                        "lithothamnion_spp")) |>
+  # change species names using mutate and case_when()
+  mutate(species = 
+           case_when(
+             species == "peysonnelia" ~ "Peyssonneila rosenvingei", 
+             species == "clathromorphum_sp" ~ "Clathromorphum circumscriptum", 
+             species == "phymatolithon_sp" ~ "Phymatolithon sp.",
+             species == "lithothamnion_spp" ~ "Lithothamnion glaciale",
+           )) |>
+  # plot
+  ggplot(aes(x = year, y = proportion*100,
+             color = site)) +
+  geom_line() +
+  labs(x = "Year",
+       y = "Percent Cover") +
+  facet_wrap(vars(species))
+
+ggsave(glue("figures/four_coralline_species.pdf"),
        width = 8, height = 6)
 
 # 
