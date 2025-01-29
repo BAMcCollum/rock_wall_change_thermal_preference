@@ -69,21 +69,19 @@ substrate_long |>
   facet_wrap(vars(species))
 
 ggsave(glue("figures/four_representative_species.pdf"),
-       width = 8, height = 6)
+       width = 9, height = 6)
 
 
 substrate_long |>
-  filter(species %in% c("peysonnelia", 
-                        "clathromorphum_sp",
-                        "phymatolithon_sp",
-                        "lithothamnion_spp")) |>
+  filter(species %in% c("alcyonium_sub", 
+                        "aplidium_glabrum",
+                        "metridium_sub")) |>
   # change species names using mutate and case_when()
   mutate(species = 
            case_when(
-             species == "peysonnelia" ~ "Peyssonneila rosenvingei", 
-             species == "clathromorphum_sp" ~ "Clathromorphum circumscriptum", 
-             species == "phymatolithon_sp" ~ "Phymatolithon sp.",
-             species == "lithothamnion_spp" ~ "Lithothamnion glaciale",
+             species == "alcyonium_sub" ~ "Alcyonium siderium", 
+             species == "aplidium_glabrum" ~ "Aplidium glabrum", 
+             species == "metridium_sub" ~ "Metridium senile"
            )) |>
   # plot
   ggplot(aes(x = year, y = proportion*100,
@@ -93,8 +91,8 @@ substrate_long |>
        y = "Percent Cover") +
   facet_wrap(vars(species))
 
-ggsave(glue("figures/four_coralline_species.pdf"),
-       width = 8, height = 6)
+ggsave(glue("figures/three_climax_species.pdf"),
+       width = 9, height = 6)
 
 # 
 # 
