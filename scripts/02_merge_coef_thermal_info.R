@@ -7,7 +7,7 @@
 pacman::p_load(dplyr, readr)
 
 dict <- read_csv("data/co_occuring_species.csv")
-sp_coefs <- read_csv("data/change_coefficients.csv")
+sp_coefs <- read_csv("data/change_coefficients_ordbetareg.csv")
 indices <- read_csv("data/Occurrence_based_species_thermal_indicies_Photos_20250103.csv")
 
 
