@@ -24,6 +24,7 @@ source("scripts/load_data_and_provide_constants.R")
 get_fitted_values <- function(mod, adf){
   emmeans(mod, 
           specs = ~year_cent,
+          epred = TRUE,
           at = list(year_cent = 
                       modelr::seq_range(adf$year_cent, 
                                         200))) |>
@@ -65,16 +66,3 @@ fitted_long <- mods_long |>
   select(-data, -mod, -coef) 
 
 write_csv(fitted_long,"data/fitted_long_ordbetareg.csv")
-
-#The species behaving badly with glmmTMB - so, let's try ordbetareg:
-
-#boltenia_ovifera
-#botryllus_schlosseri
-#cliona_spp
-#halocynthia_pyriformis
-#hymedesmia_sp
-#molgula_citrina
-#mytilus_edulis
-#orange_sponge_crust
-#scypha_sp
-#styela_sp
