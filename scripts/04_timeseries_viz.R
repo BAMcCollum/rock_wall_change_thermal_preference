@@ -11,6 +11,7 @@ library(glue)
 
 # load data and set themes
 source("scripts/load_data_and_provide_constants.R")
+fitted_curves <- read_csv("data/fitted_long_ordbetareg.csv")
 
 # plot all species
 species_data_as_list <- 
@@ -47,26 +48,49 @@ species_data_as_list <-
 
 str(substrate)
 
-substrate_long |>
+rep_sp <- substrate_long |>
   filter(species %in% c("hyd_bry_complex", 
                         "didemnum_vexillum",
                         "mytilus_edulis",
                         "lithothamnion_spp")) |>
   # change species names using mutate and case_when()
-  mutate(species = 
+  mutate(species_name = 
            case_when(
              species == "hyd_bry_complex" ~ "Hydrozoan/Bryozoan Complex", 
              species == "didemnum_vexillum" ~ "Didemnum vexillum", 
              species == "mytilus_edulis" ~ "Mytilus edulis",
              species == "lithothamnion_spp" ~ "Lithothamnion glaciale",
-           )) |>
-  # plot
-  ggplot(aes(x = year, y = proportion*100,
-             color = site)) +
-  geom_line() +
+           )) 
+
+rep_curves <- fitted_curves |>
+  filter(species %in% unique(rep_sp$species))|>
+  # change species names using mutate and case_when()
+  mutate(species_name = 
+           case_when(
+             species == "hyd_bry_complex" ~ "Hydrozoan/Bryozoan Complex", 
+             species == "didemnum_vexillum" ~ "Didemnum vexillum", 
+             species == "mytilus_edulis" ~ "Mytilus edulis",
+             species == "lithothamnion_spp" ~ "Lithothamnion glaciale",
+           )) 
+
+# plot
+ggplot(rep_sp,
+       aes(x = year, y = proportion*100,
+             group = site)) +
+  geom_line(color = "grey") +
+  geom_line(data = rep_curves,
+            aes(y = estimate*100),
+            color = "black", group = 1,
+            linewidth=2) +
+  geom_ribbon(data = rep_curves,
+              aes(y = estimate*100,
+                  ymin = lower.HPD*100,
+                  ymax = upper.HPD*100),
+              group = 1,
+              alpha = 0.3) +
   labs(x = "Year",
        y = "Percent Cover") +
-  facet_wrap(vars(species))
+  facet_wrap(vars(species_name))
 
 ggsave(glue("figures/four_representative_species.pdf"),
        width = 9, height = 6)
