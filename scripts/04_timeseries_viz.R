@@ -96,7 +96,7 @@ ggsave(glue("figures/four_representative_species.pdf"),
        width = 9, height = 6)
 
 
-substrate_long |>
+dom_sp <- substrate_long |>
   filter(species %in% c("alcyonium_sub", 
                         "aplidium_glabrum",
                         "metridium_sub")) |>
@@ -106,11 +106,32 @@ substrate_long |>
              species == "alcyonium_sub" ~ "Alcyonium siderium", 
              species == "aplidium_glabrum" ~ "Aplidium glabrum", 
              species == "metridium_sub" ~ "Metridium senile"
-           )) |>
+           ))
+  
+  dom_curves <- fitted_curves |>
+  filter(species %in% unique(dom_sp$species))|>
+  # change species names using mutate and case_when()
+  mutate(species = 
+           case_when(
+             species == "alcyonium_sub" ~ "Alcyonium siderium", 
+             species == "aplidium_glabrum" ~ "Aplidium glabrum", 
+             species == "metridium_sub" ~ "Metridium senile"
+           ))
   # plot
-  ggplot(aes(x = year, y = proportion*100,
-             color = site)) +
-  geom_line() +
+  ggplot(dom_sp,
+         aes(x = year, y = proportion*100,
+             group = site)) +
+  geom_line(color = "grey") +
+  geom_line(data = dom_curves,
+            aes(y = estimate*100),
+            color = "black", group = 1,
+            linewidth=2) +
+  geom_ribbon(data = dom_curves,
+              aes(y = estimate*100,
+                  ymin = lower.HPD*100,
+                  ymax = upper.HPD*100),
+              group = 1,
+              alpha = 0.3) +
   labs(x = "Year",
        y = "Percent Cover") +
   facet_wrap(vars(species))
