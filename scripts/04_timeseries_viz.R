@@ -101,24 +101,24 @@ dom_sp <- substrate_long |>
                         "aplidium_glabrum",
                         "metridium_sub")) |>
   # change species names using mutate and case_when()
-  mutate(species = 
+  mutate(species_name = 
            case_when(
              species == "alcyonium_sub" ~ "Alcyonium siderium", 
              species == "aplidium_glabrum" ~ "Aplidium glabrum", 
              species == "metridium_sub" ~ "Metridium senile"
            ))
   
-  dom_curves <- fitted_curves |>
+dom_curves <- fitted_curves |>
   filter(species %in% unique(dom_sp$species))|>
   # change species names using mutate and case_when()
-  mutate(species = 
+  mutate(species_name = 
            case_when(
              species == "alcyonium_sub" ~ "Alcyonium siderium", 
              species == "aplidium_glabrum" ~ "Aplidium glabrum", 
              species == "metridium_sub" ~ "Metridium senile"
            ))
-  # plot
-  ggplot(dom_sp,
+# plot
+ggplot(dom_sp,
          aes(x = year, y = proportion*100,
              group = site)) +
   geom_line(color = "grey") +
@@ -134,7 +134,7 @@ dom_sp <- substrate_long |>
               alpha = 0.3) +
   labs(x = "Year",
        y = "Percent Cover") +
-  facet_wrap(vars(species))
+  facet_wrap(vars(species_name))
 
 ggsave(glue("figures/three_climax_species.pdf"),
        width = 9, height = 6)
