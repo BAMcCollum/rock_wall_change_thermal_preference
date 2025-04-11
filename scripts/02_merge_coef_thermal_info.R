@@ -24,4 +24,22 @@ combined_data <- left_join(sp_coefs, indices_joined) |>
   janitor::remove_empty(which = "cols")
 
 View(combined_data)
+
 write_csv(combined_data, "data/coefs_with_indices.csv")
+
+combined_data <- read_csv("data/coefs_with_indices.csv")
+
+combined_data <- na.omit(combined_data) 
+
+combined_data %>%
+  arrange(estimate) %>%
+  mutate(gen_spp=factor(gen_spp, levels=gen_spp)) %>%
+  ggplot() +
+  geom_pointrange(mapping = aes(x=gen_spp, y=estimate, ymin = estimate - std.error, ymax = estimate + std.error)) +
+  coord_flip() +
+  theme_bw(base_size = 18)+
+  ylab("Coefficient of Change")+
+  xlab("Species")
+
+ggsave(glue::glue("figures/coefs_of_change.pdf"))
+
