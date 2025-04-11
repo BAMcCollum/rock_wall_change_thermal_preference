@@ -32,13 +32,14 @@ combined_data <- read_csv("data/coefs_with_indices.csv")
 combined_data <- na.omit(combined_data) 
 
 combined_data %>%
+  filter (gen_spp != "NA") %>%
   arrange(estimate) %>%
   mutate(gen_spp=factor(gen_spp, levels=gen_spp)) %>%
   ggplot() +
-  geom_pointrange(mapping = aes(x=gen_spp, y=estimate, ymin = conf.low, ymax = conf.high)) +
+  geom_pointrange(mapping = aes(x=gen_spp, y=estimate, ymin = estimate-std.error, ymax = estimate+std.error)) +
   geom_hline(yintercept = 0, lty = 2, color = "grey")+
   coord_flip() +
-  theme_bw(base_size = 18)+
+  theme_bw(base_size = 15)+
   ylab("Coefficient of Change")+
   xlab("Species")
 
