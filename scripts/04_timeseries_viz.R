@@ -48,33 +48,33 @@ species_data_as_list <-
 
 str(substrate)
 
-rep_sp <- substrate_long |>
-  filter(species %in% c("hyd_bry_complex", 
+new_dom_sp <- substrate_long |>
+  filter(species %in% c("erect_bryozoan_sub", 
                         "didemnum_vexillum",
                         "mytilus_edulis",
                         "lithothamnion_spp")) |>
   # change species names using mutate and case_when()
   mutate(species_name = 
            case_when(
-             species == "hyd_bry_complex" ~ "Hydrozoan/Bryozoan Complex", 
+             species == "erect_bryozoan_sub" ~ "Aborescent byrozoan", 
              species == "didemnum_vexillum" ~ "Didemnum vexillum", 
              species == "mytilus_edulis" ~ "Mytilus edulis",
              species == "lithothamnion_spp" ~ "Lithothamnion glaciale",
            )) 
 
-rep_curves <- fitted_curves |>
+new_dom_curves <- fitted_curves |>
   filter(species %in% unique(rep_sp$species))|>
   # change species names using mutate and case_when()
   mutate(species_name = 
            case_when(
-             species == "hyd_bry_complex" ~ "Hydrozoan/Bryozoan Complex", 
+             species == "erect_bryozoan_sub" ~ "Aborescent byrozoan", 
              species == "didemnum_vexillum" ~ "Didemnum vexillum", 
              species == "mytilus_edulis" ~ "Mytilus edulis",
              species == "lithothamnion_spp" ~ "Lithothamnion glaciale",
            )) 
 
 # plot
-ggplot(rep_sp,
+ggplot(new_dom_sp,
        aes(x = year, y = proportion*100,
              group = site)) +
   geom_line(color = "grey") +
@@ -92,7 +92,7 @@ ggplot(rep_sp,
        y = "Percent Cover") +
   facet_wrap(vars(species_name))
 
-ggsave(glue("figures/four_representative_species.pdf"),
+ggsave(glue("figures/newly_dominant_species.pdf"),
        width = 9, height = 6)
 
 
