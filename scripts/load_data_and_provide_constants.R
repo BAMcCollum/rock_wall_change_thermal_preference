@@ -26,6 +26,16 @@ substrate_long <- substrate |>
                names_to = "species",
                values_to = "proportion")
 
+View(substrate_long)
+
+current_doms <- substrate_long |>
+  filter(year > 2015) |>
+  group_by(species)|>
+  summarise(Average = mean(proportion, na.rm = TRUE))|>
+  arrange(desc(Average))
+
+View(current_doms)
+
 
 ##
 # set visual themes
