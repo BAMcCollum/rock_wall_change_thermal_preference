@@ -63,7 +63,7 @@ new_dom_sp <- substrate_long |>
            )) 
 
 new_dom_curves <- fitted_curves |>
-  filter(species %in% unique(rep_sp$species))|>
+  filter(species %in% unique(new_dom_sp$species))|>
   # change species names using mutate and case_when()
   mutate(species_name = 
            case_when(
@@ -78,11 +78,11 @@ ggplot(new_dom_sp,
        aes(x = year, y = proportion*100,
              group = site)) +
   geom_line(color = "grey") +
-  geom_line(data = rep_curves,
+  geom_line(data = new_dom_curves,
             aes(y = estimate*100),
             color = "black", group = 1,
             linewidth=2) +
-  geom_ribbon(data = rep_curves,
+  geom_ribbon(data = new_dom_curves,
               aes(y = estimate*100,
                   ymin = lower.HPD*100,
                   ymax = upper.HPD*100),
@@ -92,7 +92,7 @@ ggplot(new_dom_sp,
        y = "Percent Cover") +
   facet_wrap(vars(species_name))
 
-ggsave(glue("figures/newly_dominant_species.pdf"),
+ggsave(glue("figures/newly_dominant_species.jpg"),
        width = 9, height = 6)
 
 
