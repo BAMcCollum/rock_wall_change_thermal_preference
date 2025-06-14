@@ -51,11 +51,12 @@ combined_data %>%
   mutate(gen_spp=factor(gen_spp, levels=gen_spp)) %>%
   ggplot() +
   geom_pointrange(mapping = aes(x=gen_spp, y=estimate, ymin = conf.low, ymax = conf.high)) +
-  geom_hline(yintercept = 0, lty = 2, color = "grey")+
+  geom_hline(yintercept = 0, lty = 2, color = "red")+
   coord_flip() +
   theme_bw(base_size = 15)+
   ylab("Coefficient of Change")+
   xlab("Species")
 
-ggsave(glue::glue("figures/coefs_of_change.pdf"))
+ggsave(glue::glue("figures/coefs_of_change.jpg"))
+
 
