@@ -13,21 +13,37 @@ library(ggplot2)
 # load the data
 source("scripts/load_data_and_provide_constants.R")
 
-current_doms <- substrate_long |>
+dict <- read_csv("data/co_occuring_species.csv")
+
+substrate_long <- substrate_long |>
+  rename(coefficients_species = species)
+
+
+# First, translate indices species into coef species names
+substrate_long_joined <- substrate_long |>
+  left_join(dict) |>
+  rename(species = coefficients_species) |>
+  filter(!is.na(species)) |>
+  relocate(species)
+
+
+current_doms <- substrate_long_joined |>
   filter(year > 2015) |>
-  group_by(species)|>
+  group_by(gen_spp)|>
   summarise(Average = mean(proportion, na.rm = TRUE))|>
   arrange(desc(Average))|>
-  rename(current_average = Average)
+  rename(current_average = Average)|>
+  filter(!is.na(gen_spp))
 
 View(current_doms)
 
-past_doms <- substrate_long |>
+past_doms <- substrate_long_joined |>
   filter(year < 1985) |>
-  group_by(species) |>
+  group_by(gen_spp) |>
   summarise(Average = mean(proportion, na.rm = TRUE))|>
   arrange(desc(Average))|>
-  rename(past_average = Average)
+  rename(past_average = Average)|>
+  filter(!is.na(gen_spp))
 
 View(past_doms)
 
@@ -40,7 +56,13 @@ past_current_doms <- past_current_doms |>
                names_to = "period",
                values_to = "Proportion")
 
+colors <- c("turquoise","purple")
+outcome_labels <- c("Current (2015-2020)","Past (1979-1985)")
+
 doms_barchart <- past_current_doms |>
   ggplot() +
-  geom_col(aes(x=species, y=Proportion, fill = period), position = "dodge")
+  geom_col(aes(x=gen_spp, y=Proportion, fill = period), position = "dodge") +
+  theme(axis.text.x = element_text(angle = -90, hjust=0))+
+  labs(x = "Species", y = "Proportion of Subsite coverage") +
+  scale_fill_manual(values = colors,labels = outcome_labels)
   
