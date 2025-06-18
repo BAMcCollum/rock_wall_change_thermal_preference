@@ -307,7 +307,19 @@ ggsave(glue("figures/three_climax_species.pdf"),
 #   ggsave("figures/Edwardsiella_lineata_plot.pdf")
 # 
 # Edwardsiella_lineata_plot
+#
+# Erect_bryozoan_sub_plot <- ggplot(data = substrate,
+#                                     aes(x = year, y = erect_bryozoan_sub, #sub in species name
+#                                         color = site)) +
+#   geom_line()+
+#   labs(x = "Year",
+#        y = "Percent Cover of *Arborescent Bryozoan*")+ #sub in species name
+#   theme(axis.title.y = ggtext::element_markdown())
 # 
+#   ggsave("figures/Edwardsiella_lineata_plot.pdf")
+# 
+# Erect_bryozoan_sub_plot
+#
 # Halichondria_panicea_plot <- ggplot(data = substrate,
 #                                     aes(x = year, y = halichondria_panicea, #sub in species name
 #                                         color = site)) +
@@ -374,16 +386,17 @@ ggsave(glue("figures/three_climax_species.pdf"),
 # 
 # Leucosolenia_botryoides_plot
 # 
-# Lithothamnion_glaciale_plot <- ggplot(data = substrate,
-#                                       aes(x = year, y = lithothamnion_spp, #sub in species name
-#                                           color = site)) +
-#   geom_line()+
-#   labs(x = "Year",
-#        y = "Percent Cover of *Lithothamnion glaciale*")+ #sub in species name
-#   theme(axis.title.y = ggtext::element_markdown())+  
-#   ggsave("figures/Lithothamnion_glaciale_plot.pdf")
-# 
-# Lithothamnion_glaciale_plot
+Lithothamnion_glaciale_plot <- ggplot(data = substrate,
+                                       aes(x = year, y = lithothamnion_spp, #sub in species name
+                                           color = site)) +
+   geom_line()+
+   labs(x = "Year",
+        y = "Percent Cover of *Lithothamnion glaciale*")+ #sub in species name
+   theme(axis.title.y = ggtext::element_markdown())
+
+   ggsave("figures/Lithothamnion_glaciale_plot.pdf")
+ 
+Lithothamnion_glaciale_plot
 # 
 # Metriduim_senile_plot <- ggplot(data = substrate,
 #                                 aes(x = year, y = metridium_sub, #sub in species name
