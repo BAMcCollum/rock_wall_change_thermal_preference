@@ -38,7 +38,7 @@ current_doms <- substrate_long_joined |>
 View(current_doms)
 
 past_doms <- substrate_long_joined |>
-  filter(year < 2015) |>
+  filter(year < 1985) |>
   group_by(gen_spp, area) |>
   summarise(Average = mean(proportion, na.rm = TRUE))|>
   arrange(desc(Average))|>
@@ -57,7 +57,7 @@ past_current_doms <- past_current_doms |>
                values_to = "Proportion")
 
 colors <- c("turquoise","purple")
-outcome_labels <- c("Current (2015-2020)","Past (1979-2015)")
+outcome_labels <- c("Current (2015-2020)","Past (1980-1985)")
 
 doms_barchart <- past_current_doms |>
   ggplot() +
@@ -90,16 +90,16 @@ HRI_doms_barchart <- past_current_doms |>
 
 ggsave(glue::glue("figures/HRI_doms_barchart.jpg"))
 
+#HRO didnt exist until 1981-1989
+#HRO_doms_barchart <- past_current_doms |>
+#  filter(area == "Halfway Rock Outer") |>
+#  ggplot() +
+#  geom_col(aes(x=gen_spp, y=Proportion, fill = Period), position = "dodge") +
+#  theme(axis.text.x = element_text(angle = -90, vjust= 0.1, hjust=0))+
+#  labs(title = "Halfway Rock Outer", x = "Species", y = "Proportion of Subsite coverage") +
+#  scale_fill_manual(values = colors,labels = outcome_labels)
 
-HRO_doms_barchart <- past_current_doms |>
-  filter(area == "Halfway Rock Outer") |>
-  ggplot() +
-  geom_col(aes(x=gen_spp, y=Proportion, fill = Period), position = "dodge") +
-  theme(axis.text.x = element_text(angle = -90, vjust= 0.1, hjust=0))+
-  labs(title = "Halfway Rock Outer", x = "Species", y = "Proportion of Subsite coverage") +
-  scale_fill_manual(values = colors,labels = outcome_labels)
-
-ggsave(glue::glue("figures/HRO_doms_barchart.jpg"))
+#ggsave(glue::glue("figures/HRO_doms_barchart.jpg"))
 
 
 SHI_doms_barchart <- past_current_doms |>
