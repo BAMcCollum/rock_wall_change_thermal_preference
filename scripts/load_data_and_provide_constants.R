@@ -24,13 +24,13 @@ drop_cols <- c('hymedesmia_sp', 'boltenia_ovifera', 'haliclona_oculata')
 substrate <- substrate |>
   select(-one_of(drop_cols))
 
+
 substrate_long <- substrate |>
   
   # pivot longer so attributes (i.e., species) are in rows  
   pivot_longer(alcyonium_sub : tubularia_sub,
                names_to = "species",
                values_to = "proportion")
-
 
 ##
 # set visual themes
