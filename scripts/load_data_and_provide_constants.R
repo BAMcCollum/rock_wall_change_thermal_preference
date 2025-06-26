@@ -7,6 +7,8 @@ library(dplyr)
 library(tidyr)
 library(readr)
 
+
+
 substrate <- 
   read_csv("data/sebens_substrate_proportion.csv") |>
   filter(year > 1970,
@@ -15,9 +17,12 @@ substrate <-
   group_by(site, year) |>
   slice_tail() |> # get second sample point if there are 2
   ungroup() |>
-  mutate(year_cent = year - mean(year)) |>
-  select(-hymedesmia_sp)
+  mutate(year_cent = year - mean(year)) 
 
+drop_cols <- c('hymedesmia_sp', 'boltenia_ovifera', 'haliclona_oculata')
+
+substrate <- substrate |>
+  select(-one_of(drop_cols))
 
 substrate_long <- substrate |>
   
