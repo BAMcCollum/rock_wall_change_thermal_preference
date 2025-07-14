@@ -67,11 +67,9 @@ ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmin_mean, estimate, label = gen_s
   stat_smooth(method = "lm")+
   geom_text_repel(size = 5)+
   annotate("text", x = 22.5, y = 0.2, label = lm_eqn(coefs_with_indicies), parse = TRUE, colour = "red")+
-  labs(x = "Thermal Preference (Occupancy derived max temp at species min depth) in (°C)",  
-       y = "Coefficient of Change over 45 years",
-       title ="Thermal Preference and Change in Abundance")
+  labs(x = "Average Thermal Maxima (Occupancy derived max temp at species min depth) in (°C)",  
+       y = "Coefficient of Change over 42 years",
+       title ="Average Thermal Maxima and Change in Abundance")+
+  geom_hline(yintercept=0.0, linetype='dashed', colour='red')
 
-ggsave("figures/coefs_with_indicies.jpg", 
-       width = 50, height = 25, units = "cm")
-
-
+ggsave("figures/coefs_with_indicies.jpg")

@@ -139,6 +139,50 @@ ggplot(dom_sp,
 ggsave(glue("figures/three_climax_species.pdf"),
        width = 9, height = 6)
 
+
+edwardsiella <- substrate_long |>
+  filter(species == "edwardsiella_lineata") |>
+  # change species names using mutate and case_when()
+  mutate(species_name = 
+           case_when(
+             species == "edwardsiella_lineata" ~ "Edwardsiella lineata", 
+             ))
+
+edwardsiella_curves <- fitted_curves |>
+  filter(species %in% unique(edwardsiella$species))|>
+  # change species names using mutate and case_when()
+  mutate(species_name = 
+           case_when(
+             species == "edwardsiella_lineata" ~ "Edwardsiella lineata", 
+           ))
+# plot
+ggplot(edwardsiella,
+       aes(x = year, y = proportion*100,
+           group = site)) +
+  geom_line(color = "grey") +
+  geom_line(data = edwardsiella_curves,
+            aes(y = estimate*100),
+            color = "black", group = 1,
+            linewidth=2) +
+  geom_ribbon(data = edwardsiella_curves,
+              aes(y = estimate*100,
+                  ymin = lower.HPD*100,
+                  ymax = upper.HPD*100),
+              group = 1,
+              alpha = 0.3) +
+  labs(x = "Year",
+       y = "Percent Cover") +
+  facet_wrap(vars(species_name))
+
+
+
+
+
+
+
+
+
+
 # 
 # 
 # #Use corrected names from coefs_with_indicies.csv
