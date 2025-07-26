@@ -34,12 +34,14 @@ species_data_as_list <-
            aes(x = year, y = proportion*100, #sub in species name
                color = site)) +
       geom_line() +
+      facet_wrap(~area) +
       labs(x = "Year",
+           color = "Site",
            y = glue("Percent Cover of *{sp}*"))+ #sub in species name
       theme(axis.title.y = ggtext::element_markdown())
     
     ggsave(glue("figures/raw_timeseries/{sp}.pdf"),
-           width = 6, height = 6)
+           width = 10, height = 6)
   })
 
 
