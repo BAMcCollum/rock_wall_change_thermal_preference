@@ -19,7 +19,9 @@ substrate <-
   ungroup() |>
   mutate(year_cent = year - mean(year)) 
 
-drop_cols <- c('hymedesmia_sp', 'boltenia_ovifera', 'haliclona_oculata')
+drop_cols <- c('hymedesmia_sp', 
+               'boltenia_ovifera', 
+               'haliclona_oculata')
 
 substrate <- substrate |>
   select(-one_of(drop_cols))
@@ -31,6 +33,20 @@ substrate_long <- substrate |>
   pivot_longer(alcyonium_sub : tubularia_sub,
                names_to = "species",
                values_to = "proportion")
+
+## 
+# remove rare species
+# where rare = 1 year or less of > 5% cover
+##
+sp_few_yrs_grt_5 <- substrate_long |>
+  filter(!is.na(proportion)) |>
+  group_by(species) |>
+  summarize(n_year_abund = sum(proportion > 0.05)) |>
+  filter(n_year_abund <= 1) |>
+  pull(species)
+
+substrate_long <- substrate_long |>
+  filter(!(species %in% sp_few_yrs_grt_5))
 
 ##
 # set visual themes
