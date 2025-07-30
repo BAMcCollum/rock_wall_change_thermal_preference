@@ -38,7 +38,7 @@ substrate_long <- substrate |>
 # remove rare species
 # where rare = 1 year or less of > 5% cover
 ##
-sp_few_yrs_grt_5 <- substrate_long |>
+rare_sp <- substrate_long |>
   filter(!is.na(proportion)) |>
   group_by(species) |>
   summarize(n_year_abund = sum(proportion > 0.05)) |>
@@ -46,7 +46,7 @@ sp_few_yrs_grt_5 <- substrate_long |>
   pull(species)
 
 substrate_long <- substrate_long |>
-  filter(!(species %in% sp_few_yrs_grt_5))
+  filter(!(species %in% rare_sp))
 
 ##
 # set visual themes
