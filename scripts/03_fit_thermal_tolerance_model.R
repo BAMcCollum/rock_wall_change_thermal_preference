@@ -74,7 +74,7 @@ ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmin_mean, estimate, label = gen_s
   labs(x = "Average Thermal Maxima (Occupancy derived max temp at species min depth) in (°C)",  
        y = "Coefficient of Change over 42 years",
        title ="Average Thermal Maxima and Change in Abundance")+
-  geom_hline(yintercept=0.0, linetype='dashed', colour='red') +
-  geom_vline(xintercept=15, linetype='dashed', colour='purple')
+  geom_hline(yintercept=0.0, linetype='dashed', colour='orange') +
+  geom_vline(xintercept=15, colour='green')
 
 ggsave("figures/coefs_with_indicies.jpg")
