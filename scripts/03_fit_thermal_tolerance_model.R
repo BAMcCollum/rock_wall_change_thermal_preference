@@ -6,7 +6,7 @@
 
 library(readr)
 library(ggplot2)
-theme_set(theme_classic(base_size = 12))
+theme_set(theme_classic(base_size = 18))
 library(dplyr)
 library(tidyr)
 library(purrr)
@@ -15,6 +15,7 @@ library(car)
 library(broom)
 library(ggrepel)
 library(gtsummary)
+library(gt)
 
 # load data and set themes
 source("scripts/load_data_and_provide_constants.R")
@@ -48,9 +49,12 @@ get_mod_info <- function(mod){
 }
 
 mod_list <- list(mod1, mod2)
-purrr:::map(mod_list,
+layer_comp <- purrr:::map(mod_list,
             get_mod_info) |>
   bind_rows()
+
+#make a better looking table
+gt::gt(layer_comp)
 
 
 lm_eqn <- function(df){
@@ -66,10 +70,11 @@ ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmin_mean, estimate, label = gen_s
   geom_point()+
   stat_smooth(method = "lm")+
   geom_text_repel(size = 5)+
-  annotate("text", x = 22.5, y = 0.2, label = lm_eqn(coefs_with_indicies), parse = TRUE, colour = "red")+
+  #annotate("text", x = 22.5, y = 0.2, label = lm_eqn(coefs_with_indicies), parse = TRUE, colour = "red")+
   labs(x = "Average Thermal Maxima (Occupancy derived max temp at species min depth) in (°C)",  
        y = "Coefficient of Change over 42 years",
        title ="Average Thermal Maxima and Change in Abundance")+
-  geom_hline(yintercept=0.0, linetype='dashed', colour='red')
+  geom_hline(yintercept=0.0, linetype='dashed', colour='red') +
+  geom_vline(xintercept=15, linetype='dashed', colour='purple')
 
 ggsave("figures/coefs_with_indicies.jpg")
