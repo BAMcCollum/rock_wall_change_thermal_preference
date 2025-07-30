@@ -28,7 +28,7 @@ write_csv(combined_data, "data/coefs_with_indices.csv")
 
 combined_data <- read_csv("data/coefs_with_indices.csv")
 
-combined_data <- na.omit(combined_data) 
+#combined_data <- na.omit(combined_data) 
 
 #Figure with std.errors
 combined_data %>%
@@ -52,7 +52,7 @@ combined_data %>%
   geom_pointrange(mapping = aes(x=gen_spp, y=estimate, ymin = conf.low, ymax = conf.high)) +
   geom_hline(yintercept = 0, lty = 2, color = "red")+
   coord_flip() +
-  theme_bw(base_size = 15)+
+  theme_bw(base_size = 18)+
   ylab("Coefficient of Change")+
   xlab("Species")
 
