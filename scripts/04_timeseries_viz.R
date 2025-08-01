@@ -40,7 +40,7 @@ species_data_as_list <-
            y = glue("Percent Cover of *{sp}*"))+ #sub in species name
       theme(axis.title.y = ggtext::element_markdown())
     
-    ggsave(glue("figures/raw_timeseries/{sp}.pdf"),
+    ggsave(glue("figures/raw_timeseries/{sp}.jpg"),
            width = 10, height = 6)
   })
 
@@ -138,7 +138,7 @@ ggplot(dom_sp,
        y = "Percent Cover") +
   facet_wrap(vars(species_name))
 
-ggsave(glue("figures/three_climax_species.pdf"),
+ggsave(glue("figures/three_climax_species.jpg"),
        width = 9, height = 6)
 
 
