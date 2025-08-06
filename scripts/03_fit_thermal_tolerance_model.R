@@ -93,10 +93,12 @@ ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmin_mean, estimate, label = gen_s
   stat_smooth(method = "lm")+
   geom_text_repel(size = 6)+
   #annotate("text", x = 22.5, y = 0.2, label = lm_eqn(coefs_with_indicies), parse = TRUE, colour = "red")+
+  theme_classic(base_size = 18)+
   labs(x = "Average Thermal Maxima (Occupancy derived max temp at species min depth) in (°C)",  
        y = "Coefficient of Change over 42 years",
        title ="Average Thermal Maxima and Change in Abundance")+
   geom_hline(yintercept=0.0, linetype='dashed', linewidth = 1.5, colour='orange') +
-  geom_vline(xintercept=15, linewidth = 1.5, colour='green')
+  geom_vline(xintercept=17.4, linewidth = 2, colour='green') +
+  geom_vline(xintercept=14.07, linewidth = 2, colour='turquoise')
 
 ggsave("figures/coefs_with_indicies.jpg")
