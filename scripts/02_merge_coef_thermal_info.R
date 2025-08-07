@@ -4,7 +4,7 @@
 #' https://github.com/BAMcCollum/sp_thermal_limits
 #' -----------------------------------------------
 
-pacman::p_load(dplyr, readr)
+pacman::p_load(dplyr, readr, ggplot2)
 
 dict <- read_csv("data/co_occuring_species.csv")
 sp_coefs <- read_csv("data/change_coefficients_ordbetareg.csv")
@@ -50,7 +50,7 @@ combined_data %>%
   mutate(gen_spp=factor(gen_spp, levels=gen_spp)) %>%
   ggplot() +
   geom_pointrange(mapping = aes(x=gen_spp, y=estimate, ymin = conf.low, ymax = conf.high)) +
-  geom_hline(yintercept = 0, lty = 2, color = "red")+
+  geom_hline(yintercept = 0, lty = 2, color = "orange")+
   coord_flip() +
   theme_bw(base_size = 18)+
   ylab("Coefficient of Change")+
