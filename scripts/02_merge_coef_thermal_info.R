@@ -55,9 +55,11 @@ combined_data %>%
   geom_pointrange(mapping = aes(x=gen_spp, y=estimate, ymin = conf.low, ymax = conf.high)) +
   geom_hline(yintercept = 0, lty = 2, color = "orange", linewidth = 2)+
   coord_flip() +
-  theme_bw(base_size = 18)+
+  theme_bw(base_size = 20)+
   ylab("Coefficient of Change")+
-  xlab("Species")
+  theme(axis.title.y = element_blank())+
+  theme(axis.text.y=element_text(face="italic"))
+
 
 ggsave(glue::glue("figures/coefs_of_change.jpg"))
 
