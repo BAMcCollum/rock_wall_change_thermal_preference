@@ -139,31 +139,31 @@ ggsave(glue("figures/three_climax_species.jpg"),
        width = 9, height = 6)
 
 
-edwardsiella <- substrate_long |>
-  filter(species == "edwardsiella_lineata") |>
+coralline <- substrate_long |>
+  filter(species == "coralline_crust") |>
   # change species names using mutate and case_when()
   mutate(species_name = 
            case_when(
-             species == "edwardsiella_lineata" ~ "Edwardsiella lineata", 
+             species == "coralline_crust" ~ "Coralline Crust", 
              ))
 
-edwardsiella_curves <- fitted_curves |>
-  filter(species %in% unique(edwardsiella$species))|>
+corallines_curves <- fitted_curves |>
+  filter(species %in% unique(coralline$species))|>
   # change species names using mutate and case_when()
   mutate(species_name = 
            case_when(
-             species == "edwardsiella_lineata" ~ "Edwardsiella lineata", 
+             species == "coralline_crust" ~ "Coralline Crust", 
            ))
 # plot
-ggplot(edwardsiella,
+ggplot(coralline,
        aes(x = year, y = proportion*100,
            group = site)) +
   geom_line(color = "grey") +
-  geom_line(data = edwardsiella_curves,
+  geom_line(data = corallines_curves,
             aes(y = estimate*100),
             color = "black", group = 1,
             linewidth=2) +
-  geom_ribbon(data = edwardsiella_curves,
+  geom_ribbon(data = corallines_curves,
               aes(y = estimate*100,
                   ymin = lower.HPD*100,
                   ymax = upper.HPD*100),
