@@ -23,6 +23,9 @@ indices_joined <- indices |>
 combined_data <- left_join(sp_coefs, indices_joined) |>
   janitor::remove_empty(which = "cols")
 
+#Rename Halichondria (Halichondria) panicea to Halichondria panicea 
+combined_data$gen_spp[combined_data$gen_spp==
+                              "Halichondria (Halichondria) panicea"] <- "Halichondria panicea"
 
 write_csv(combined_data, "data/coefs_with_indices.csv")
 
@@ -50,7 +53,7 @@ combined_data %>%
   mutate(gen_spp=factor(gen_spp, levels=gen_spp)) %>%
   ggplot() +
   geom_pointrange(mapping = aes(x=gen_spp, y=estimate, ymin = conf.low, ymax = conf.high)) +
-  geom_hline(yintercept = 0, lty = 2, color = "orange")+
+  geom_hline(yintercept = 0, lty = 2, color = "orange", linewidth = 2)+
   coord_flip() +
   theme_bw(base_size = 18)+
   ylab("Coefficient of Change")+
