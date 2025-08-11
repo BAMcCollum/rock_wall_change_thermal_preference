@@ -57,7 +57,7 @@ new_dom_sp <- substrate_long |>
   # change species names using mutate and case_when()
   mutate(species_name = 
            case_when(
-             species == "erect_bryozoan_sub" ~ "Aborescent byrozoan", 
+             species == "erect_bryozoan_sub" ~ "Aborescent Byrozoan", 
              species == "didemnum_vexillum" ~ "Didemnum vexillum", 
              species == "mytilus_edulis" ~ "Mytilus edulis",
            )) 
@@ -67,7 +67,7 @@ new_dom_curves <- fitted_curves |>
   # change species names using mutate and case_when()
   mutate(species_name = 
            case_when(
-             species == "erect_bryozoan_sub" ~ "Aborescent byrozoan", 
+             species == "erect_bryozoan_sub" ~ "Aborescent Byrozoan", 
              species == "didemnum_vexillum" ~ "Didemnum vexillum", 
              species == "mytilus_edulis" ~ "Mytilus edulis",
            )) 
