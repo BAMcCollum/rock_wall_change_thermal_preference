@@ -53,15 +53,13 @@ str(substrate)
 new_dom_sp <- substrate_long |>
   filter(species %in% c("erect_bryozoan_sub", 
                         "didemnum_vexillum",
-                        "mytilus_edulis",
-                        "lithothamnion_spp")) |>
+                        "mytilus_edulis")) |>
   # change species names using mutate and case_when()
   mutate(species_name = 
            case_when(
              species == "erect_bryozoan_sub" ~ "Aborescent byrozoan", 
              species == "didemnum_vexillum" ~ "Didemnum vexillum", 
              species == "mytilus_edulis" ~ "Mytilus edulis",
-             species == "lithothamnion_spp" ~ "Lithothamnion glaciale",
            )) 
 
 new_dom_curves <- fitted_curves |>
@@ -72,7 +70,6 @@ new_dom_curves <- fitted_curves |>
              species == "erect_bryozoan_sub" ~ "Aborescent byrozoan", 
              species == "didemnum_vexillum" ~ "Didemnum vexillum", 
              species == "mytilus_edulis" ~ "Mytilus edulis",
-             species == "lithothamnion_spp" ~ "Lithothamnion glaciale",
            )) 
 
 # plot

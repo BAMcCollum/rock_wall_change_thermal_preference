@@ -23,8 +23,6 @@ source("scripts/load_data_and_provide_constants.R")
 coefs_with_indicies <- read_csv("data/coefs_with_indices.csv")
 View (coefs_with_indicies)
 
-#Rename Halichondria (Halichondria) panicea to Halichondria panicea 
-coefs_with_indicies$gen_spp[coefs_with_indicies$gen_spp=="Halichondria (Halichondria) panicea"] <- "Halichondria panicea"
 
 ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmean_mean, estimate))+
   geom_point()+
