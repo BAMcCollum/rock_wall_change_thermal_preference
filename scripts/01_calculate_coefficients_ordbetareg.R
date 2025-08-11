@@ -52,7 +52,8 @@ coefs_long <- mods_long |>
   # great, get back the data
   unnest(coef) |>
   select(-data, -mod, 
-         -effect, -component, -group, -fitted) 
+         -effect, -component, -group, -fitted) |>
+  arrange(species)
 
 View(coefs_long)
 
@@ -61,6 +62,7 @@ write_csv(coefs_long,"data/change_coefficients_ordbetareg.csv")
 # What about modeled predictions for figures marginalized
 # over site and area?
 fitted_long <- mods_long |>  
+  arrange(species) |> 
   # great, get back the data
   unnest(fitted) |>
   select(-data, -mod, -coef) 
