@@ -17,15 +17,15 @@ substrate <-
   group_by(site, year) |>
   slice_tail() |> # get second sample point if there are 2
   ungroup() |>
-  mutate(year_cent = year - mean(year),
-         hydroids = hydroid_sub + tubularia_sub,
+  mutate(hydroids = hydroid_sub + tubularia_sub,
          isodictya_spp = isodictya_spp + orange_sponge_crust,
          alcyonium_siderium = alcyonium_sub,
          anomia_simplex = anomia_spp,
          botrylloides_violaceus = botrylloides_sp,
          cliona_celata = cliona_spp,
          leucosolenia_botryloides = leucosolenia_spp,
-         metridium_senile = metridium_sub)
+         metridium_senile = metridium_sub,
+         year_cent = year - mean(year))
          
 
 drop_cols <- c('hymedesmia_sp', 
@@ -41,14 +41,16 @@ drop_cols <- c('hymedesmia_sp',
                'leucosolenia_spp',
                'metridium_sub')
 
+
 substrate <- substrate |>
   select(-one_of(drop_cols))
 
+View(substrate)
 
 substrate_long <- substrate |>
   
   # pivot longer so attributes (i.e., species) are in rows  
-  pivot_longer(c(alcyonium_siderium : tube_complex),
+  pivot_longer(c(aplidium_glabrum : metridium_senile),
                names_to = "species",
                values_to = "proportion")
 
@@ -66,6 +68,7 @@ rare_sp <- substrate_long |>
 substrate_long <- substrate_long |>
   filter(!(species %in% rare_sp))
 
+View(substrate_long)
 ##
 # set visual themes
 ##
