@@ -18,12 +18,12 @@ substrate <-
   slice_tail() |> # get second sample point if there are 2
   ungroup() |>
   mutate(year_cent = year - mean(year),
-         arborescent_bryozoan = erect_bryozoan_sub + tubularia_sub) 
+         hydroids = hydroid_sub + tubularia_sub) 
 
 drop_cols <- c('hymedesmia_sp', 
                'boltenia_ovifera', 
                'haliclona_oculata',
-               'erect_bryozoan_sub',
+               'hydroid_sub',
                'tubularia_sub')
 
 substrate <- substrate |>
