@@ -89,12 +89,11 @@ lm_eqn <- function(df){
 ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmin_mean, estimate, label = gen_spp))+
   geom_point()+
   stat_smooth(method = "lm")+
-  geom_text_repel(size = 6)+
+  geom_text_repel(size = 6, fontface = "italic")+
   #annotate("text", x = 22.5, y = 0.2, label = lm_eqn(coefs_with_indicies), parse = TRUE, colour = "red")+
-  theme_classic(base_size = 18)+
+  theme_classic(base_size = 20)+
   labs(x = "Average Thermal Maxima (Occupancy derived max temp at species min depth) in (°C)",  
-       y = "Coefficient of Change over 42 years",
-       title ="Average Thermal Maxima and Change in Abundance")+
+       y = "Coefficient of Change over 42 years")+
   geom_hline(yintercept=0.0, linetype='dashed', linewidth = 1.5, colour='orange') +
   geom_vline(xintercept=17.4, linewidth = 2, colour='green') +
   geom_vline(xintercept=14.07, linewidth = 2, colour='turquoise')
