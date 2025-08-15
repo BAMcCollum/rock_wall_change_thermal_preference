@@ -18,13 +18,28 @@ substrate <-
   slice_tail() |> # get second sample point if there are 2
   ungroup() |>
   mutate(year_cent = year - mean(year),
-         hydroids = hydroid_sub + tubularia_sub) 
+         hydroids = hydroid_sub + tubularia_sub,
+         isodictya_spp = isodictya_spp + orange_sponge_crust,
+         alcyonium_siderium = alcyonium_sub,
+         anomia_simplex = anomia_spp,
+         botrylloides_violaceus = botrylloides_sp,
+         cliona_celata = cliona_spp,
+         leucosolenia_botryloides = leucosolenia_spp,
+         metridium_senile = metridium_sub)
+         
 
 drop_cols <- c('hymedesmia_sp', 
                'boltenia_ovifera', 
                'haliclona_oculata',
                'hydroid_sub',
-               'tubularia_sub')
+               'tubularia_sub',
+               'orange_sponge_crust',
+               'alcyonium_sub',
+               'anomia_spp',
+               'botrylloides_sp',
+               'cliona_spp',
+               'leucosolenia_spp',
+               'metridium_sub')
 
 substrate <- substrate |>
   select(-one_of(drop_cols))
@@ -33,7 +48,7 @@ substrate <- substrate |>
 substrate_long <- substrate |>
   
   # pivot longer so attributes (i.e., species) are in rows  
-  pivot_longer(c(alcyonium_sub : tube_complex),
+  pivot_longer(c(alcyonium_siderium : tube_complex),
                names_to = "species",
                values_to = "proportion")
 
