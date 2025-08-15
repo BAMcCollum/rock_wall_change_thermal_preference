@@ -45,7 +45,6 @@ drop_cols <- c('hymedesmia_sp',
 substrate <- substrate |>
   select(-one_of(drop_cols))
 
-View(substrate)
 
 substrate_long <- substrate |>
   
@@ -68,7 +67,7 @@ rare_sp <- substrate_long |>
 substrate_long <- substrate_long |>
   filter(!(species %in% rare_sp))
 
-View(substrate_long)
+
 ##
 # set visual themes
 ##
