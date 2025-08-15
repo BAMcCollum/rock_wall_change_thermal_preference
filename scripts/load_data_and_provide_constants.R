@@ -18,15 +18,13 @@ substrate <-
   slice_tail() |> # get second sample point if there are 2
   ungroup() |>
   mutate(year_cent = year - mean(year),
-         coralline_crust = clathromorphum_sp + phymatolithon_sp + lithothamnion_spp + peysonnelia) 
+         arborescent_bryozoan = erect_bryozoan_sub + tubularia_sub) 
 
 drop_cols <- c('hymedesmia_sp', 
                'boltenia_ovifera', 
                'haliclona_oculata',
-               'clathromorphum_sp',
-               'phymatolithon_sp',
-               'lithothamnion_spp',
-               'peysonnelia')
+               'erect_bryozoan_sub',
+               'tubularia_sub')
 
 substrate <- substrate |>
   select(-one_of(drop_cols))
@@ -35,7 +33,7 @@ substrate <- substrate |>
 substrate_long <- substrate |>
   
   # pivot longer so attributes (i.e., species) are in rows  
-  pivot_longer(c(alcyonium_sub : tubularia_sub,coralline_crust),
+  pivot_longer(c(alcyonium_sub : tube_complex),
                names_to = "species",
                values_to = "proportion")
 
