@@ -71,7 +71,7 @@ substrate_long <- substrate |>
 rare_sp <- substrate_long |>
   filter(!is.na(proportion)) |>
   group_by(species) |>
-  summarize(n_year_abund = sum(proportion < 0.05)) |>
+  summarize(n_year_abund = sum(proportion > 0.05)) |>
   filter(n_year_abund <= 1) |>
   pull(species)
 
