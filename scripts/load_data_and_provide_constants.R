@@ -23,8 +23,14 @@ substrate <-
          anomia_simplex = anomia_spp,
          botrylloides_violaceus = botrylloides_sp,
          cliona_celata = cliona_spp,
-         leucosolenia_botryloides = leucosolenia_spp,
+         clathromorphum_circumscriptum = clathromorphum_sp,
+         erect_bryozoan = erect_bryozoan_sub,
+         green_algae = green_algae_sub,
+         halisarca_spp = halisarca_nahantensis,
+         leucosolenia_botryoides = leucosolenia_spp,
+         lithothamnion_glaciale  = lithothamnion_spp,
          metridium_senile = metridium_sub,
+         peysonnelia_rugulosum = peysonnelia,
          year_cent = year - mean(year))
          
 
@@ -38,7 +44,11 @@ drop_cols <- c('hymedesmia_sp',
                'anomia_spp',
                'botrylloides_sp',
                'cliona_spp',
+               'clathromorphum_sp',
                'leucosolenia_spp',
+               'erect_bryozoan_sub',
+               'lithothamnion_spp',
+               'peysonnelia',
                'metridium_sub')
 
 
@@ -49,9 +59,10 @@ substrate <- substrate |>
 substrate_long <- substrate |>
   
   # pivot longer so attributes (i.e., species) are in rows  
-  pivot_longer(c(aplidium_glabrum : metridium_senile),
+  pivot_longer(c(aplidium_glabrum : peysonnelia_rugulosum),
                names_to = "species",
                values_to = "proportion")
+
 
 ## 
 # remove rare species
@@ -60,7 +71,7 @@ substrate_long <- substrate |>
 rare_sp <- substrate_long |>
   filter(!is.na(proportion)) |>
   group_by(species) |>
-  summarize(n_year_abund = sum(proportion > 0.05)) |>
+  summarize(n_year_abund = sum(proportion < 0.05)) |>
   filter(n_year_abund <= 1) |>
   pull(species)
 
