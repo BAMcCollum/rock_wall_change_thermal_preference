@@ -29,7 +29,8 @@ substrate <-
          leucosolenia_botryoides = leucosolenia_spp,
          lithothamnion_glaciale  = lithothamnion_spp,
          metridium_senile = metridium_sub,
-         peysonnelia_lamii = peysonnelia,
+         waernia_mirabilis = peysonnelia,
+         phymatolithon_lamii = phymatolithon_sp,
          year_cent = year - mean(year))
          
 
@@ -48,6 +49,7 @@ drop_cols <- c('hymedesmia_sp',
                'erect_bryozoan_sub',
                'lithothamnion_spp',
                'peysonnelia',
+               'phymatolithon_sp',
                'metridium_sub')
 
 
@@ -58,7 +60,7 @@ substrate <- substrate |>
 substrate_long <- substrate |>
   
   # pivot longer so attributes (i.e., species) are in rows  
-  pivot_longer(c(aplidium_glabrum : peysonnelia_lamii),
+  pivot_longer(c(aplidium_glabrum : phymatolithon_lamii),
                names_to = "species",
                values_to = "proportion")
 
