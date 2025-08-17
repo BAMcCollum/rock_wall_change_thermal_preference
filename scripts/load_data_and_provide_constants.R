@@ -18,7 +18,7 @@ substrate <-
   slice_tail() |> # get second sample point if there are 2
   ungroup() |>
   mutate(hydroids = hydroid_sub + tubularia_sub,
-         isodictya_spp = isodictya_spp + orange_sponge_crust,
+         isodictya_deichmannae = isodictya_spp + orange_sponge_crust,
          alcyonium_siderium = alcyonium_sub,
          anomia_simplex = anomia_spp,
          botrylloides_violaceus = botrylloides_sp,
@@ -26,11 +26,10 @@ substrate <-
          clathromorphum_circumscriptum = clathromorphum_sp,
          erect_bryozoan = erect_bryozoan_sub,
          green_algae = green_algae_sub,
-         halisarca_spp = halisarca_nahantensis,
          leucosolenia_botryoides = leucosolenia_spp,
          lithothamnion_glaciale  = lithothamnion_spp,
          metridium_senile = metridium_sub,
-         peysonnelia_rugulosum = peysonnelia,
+         peysonnelia_lamii = peysonnelia,
          year_cent = year - mean(year))
          
 
@@ -59,7 +58,7 @@ substrate <- substrate |>
 substrate_long <- substrate |>
   
   # pivot longer so attributes (i.e., species) are in rows  
-  pivot_longer(c(aplidium_glabrum : peysonnelia_rugulosum),
+  pivot_longer(c(aplidium_glabrum : peysonnelia_lamii),
                names_to = "species",
                values_to = "proportion")
 
