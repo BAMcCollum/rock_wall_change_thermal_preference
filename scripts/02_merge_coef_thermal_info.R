@@ -6,9 +6,9 @@
 
 pacman::p_load(dplyr, readr, ggplot2)
 
-dict <- read_csv("data/co_occuring_species.csv")
+dict <- read_csv("data/co_occuring_species.csv") #remake once "indices" is updated
 sp_coefs <- read_csv("data/change_coefficients_ordbetareg.csv")
-indices <- read_csv("data/Occurrence_based_species_thermal_indicies_Photos_20250605.csv")
+indices <- read_csv("data/Occurrence_based_species_thermal_indicies_Photos_20250605.csv") #wait for Jarrett to update
 
 
 # First, translate indices species into coef species names
