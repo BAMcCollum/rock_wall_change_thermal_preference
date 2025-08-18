@@ -26,6 +26,7 @@ substrate <-
          clathromorphum_circumscriptum = clathromorphum_sp,
          erect_bryozoan = erect_bryozoan_sub,
          green_algae = green_algae_sub,
+         red_algae = red_algae_sub,
          leucosolenia_botryoides = leucosolenia_spp,
          lithothamnion_glaciale  = lithothamnion_spp,
          metridium_senile = metridium_sub,
@@ -39,6 +40,7 @@ drop_cols <- c('hymedesmia_sp',
                'haliclona_oculata',
                'hydroid_sub',
                'tubularia_sub',
+               'isodictya_spp',
                'orange_sponge_crust',
                'alcyonium_sub',
                'anomia_spp',
@@ -47,6 +49,8 @@ drop_cols <- c('hymedesmia_sp',
                'clathromorphum_sp',
                'leucosolenia_spp',
                'erect_bryozoan_sub',
+               'green_algae_sub',
+               'red_algae_sub',
                'lithothamnion_spp',
                'peysonnelia',
                'phymatolithon_sp',
@@ -89,3 +93,4 @@ library(ggplot2)
 theme_set(theme_classic(base_size = 18) +
           theme(axis.title.y = ggtext::element_markdown())
 )
+
