@@ -28,7 +28,7 @@ substrate <-
          green_algae = green_algae_sub,
          red_algae = red_algae_sub,
          leucosolenia_botryoides = leucosolenia_spp,
-         lithothamnion_glaciale  = lithothamnion_spp,
+         boreolithothamnion_glaciale  = lithothamnion_spp,
          metridium_senile = metridium_sub,
          waernia_mirabilis = peysonnelia,
          phymatolithon_lamii = phymatolithon_sp,
