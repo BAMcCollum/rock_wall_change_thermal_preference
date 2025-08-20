@@ -31,8 +31,9 @@ substrate <-
          boreolithothamnion_glaciale  = lithothamnion_spp,
          metridium_senile = metridium_sub,
          waernia_mirabilis = peysonnelia,
-         phymatolithon_lamii = phymatolithon_sp,
+         phymatolithon_scabriusculum = phymatolithon_sp,
          year_cent = year - mean(year))
+
          
 
 drop_cols <- c('hymedesmia_sp', 
@@ -64,7 +65,7 @@ substrate <- substrate |>
 substrate_long <- substrate |>
   
   # pivot longer so attributes (i.e., species) are in rows  
-  pivot_longer(c(aplidium_glabrum : phymatolithon_lamii),
+  pivot_longer(c(aplidium_glabrum : phymatolithon_scabriusculum),
                names_to = "species",
                values_to = "proportion")
 
