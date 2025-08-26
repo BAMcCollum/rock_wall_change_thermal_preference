@@ -17,45 +17,15 @@ substrate <-
   group_by(site, year) |>
   slice_tail() |> # get second sample point if there are 2
   ungroup() |>
-  mutate(hydroids = hydroid_sub + tubularia_sub,
-         isodictya_deichmannae = isodictya_spp + orange_sponge_crust,
-         alcyonium_siderium = alcyonium_sub,
-         anomia_simplex = anomia_spp,
-         botrylloides_violaceus = botrylloides_sp,
-         cliona_celata = cliona_spp,
-         clathromorphum_circumscriptum = clathromorphum_sp,
-         erect_bryozoan = erect_bryozoan_sub,
-         green_algae = green_algae_sub,
-         red_algae = red_algae_sub,
-         leucosolenia_botryoides = leucosolenia_spp,
-         boreolithothamnion_glaciale  = lithothamnion_spp,
-         metridium_senile = metridium_sub,
-         waernia_mirabilis = peysonnelia,
-         phymatolithon_scabriusculum = phymatolithon_sp,
+  mutate(hydroid = hydroid + ectopleura_crocea,
+         isodictya_deichmannae = isodictya_deichmannae + orange_sponge_crust,
          year_cent = year - mean(year))
 
          
 
 drop_cols <- c('hymedesmia_sp', 
                'boltenia_ovifera', 
-               'haliclona_oculata',
-               'hydroid_sub',
-               'tubularia_sub',
-               'isodictya_spp',
-               'orange_sponge_crust',
-               'alcyonium_sub',
-               'anomia_spp',
-               'botrylloides_sp',
-               'cliona_spp',
-               'clathromorphum_sp',
-               'leucosolenia_spp',
-               'erect_bryozoan_sub',
-               'green_algae_sub',
-               'red_algae_sub',
-               'lithothamnion_spp',
-               'peysonnelia',
-               'phymatolithon_sp',
-               'metridium_sub')
+               'haliclona_oculata')
 
 
 substrate <- substrate |>
@@ -65,7 +35,7 @@ substrate <- substrate |>
 substrate_long <- substrate |>
   
   # pivot longer so attributes (i.e., species) are in rows  
-  pivot_longer(c(aplidium_glabrum : phymatolithon_scabriusculum),
+  pivot_longer(c(aplidium_glabrum : waernia_mirabilis),
                names_to = "species",
                values_to = "proportion")
 
