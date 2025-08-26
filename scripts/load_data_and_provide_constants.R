@@ -25,7 +25,9 @@ substrate <-
 
 drop_cols <- c('hymedesmia_sp', 
                'boltenia_ovifera', 
-               'haliclona_oculata')
+               'haliclona_oculata',
+               'ectopleura_crocea',
+               'orange_sponge_crust')
 
 
 substrate <- substrate |>
