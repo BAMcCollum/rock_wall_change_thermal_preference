@@ -10,14 +10,14 @@ library(readr)
 
 
 substrate <- 
-  read_csv("data/sebens_substrate_proportion.csv") |>
+  read_csv("data/sebens_substrate_proportion (4).csv") |>
   filter(year > 1970,
          month %in% c(6:9),
          angle == "vertical") |>
   group_by(site, year) |>
   slice_tail() |> # get second sample point if there are 2
   ungroup() |>
-  mutate(hydroid = hydroid + ectopleura_crocea,
+  mutate(hydroids = hydroid + ectopleura_crocea,
          isodictya_deichmannae = isodictya_deichmannae + orange_sponge_crust,
          year_cent = year - mean(year))
 
