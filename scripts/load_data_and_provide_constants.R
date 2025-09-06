@@ -17,16 +17,18 @@ substrate <-
   group_by(site, year) |>
   slice_tail() |> # get second sample point if there are 2
   ungroup() |>
-  mutate(hydroids = hydroid + ectopleura_crocea,
-         isodictya_deichmannae = isodictya_deichmannae + orange_sponge_crust,
+  mutate(hydroid = hydroid_sub + tubularia_sub,
+         isodictya_deichmannae = isodictya_spp + orange_sponge_crust,
          year_cent = year - mean(year))
 
          
 
-drop_cols <- c('hymedesmia_sp', 
+drop_cols <- c('hydroid_sub',
+               'tubularia_sub',
+               'isodictya_spp',
+               'hymedesmia_sp', 
                'boltenia_ovifera', 
                'haliclona_oculata',
-               'ectopleura_crocea',
                'orange_sponge_crust')
 
 
@@ -37,7 +39,7 @@ substrate <- substrate |>
 substrate_long <- substrate |>
   
   # pivot longer so attributes (i.e., species) are in rows  
-  pivot_longer(c(aplidium_glabrum : waernia_mirabilis),
+  pivot_longer(c(alcyonium_sub : tube_complex),
                names_to = "species",
                values_to = "proportion")
 
