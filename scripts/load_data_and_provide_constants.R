@@ -10,26 +10,27 @@ library(readr)
 
 
 substrate <- 
-  read_csv("data/sebens_substrate_proportion (4).csv") |>
+  read_csv("data/sebens_substrate_proportion_20250908.csv") |>
   filter(year > 1970,
          month %in% c(6:9),
          angle == "vertical") |>
   group_by(site, year) |>
   slice_tail() |> # get second sample point if there are 2
   ungroup() |>
-  mutate(hydroid = hydroid_sub + tubularia_sub,
-         isodictya_deichmannae = isodictya_spp + orange_sponge_crust,
+  mutate(#hydroid = hydroid_sub + tubularia_sub,
+         #isodictya_deichmannae = isodictya_spp + orange_sponge_crust,
          year_cent = year - mean(year))
 
          
 
-drop_cols <- c('hydroid_sub',
-               'tubularia_sub',
-               'isodictya_spp',
+drop_cols <- c(#'hydroid_sub',
+               #'tubularia_sub',
+               #'isodictya_spp',
+               #'orange_sponge_crust',
                'hymedesmia_sp', 
                'boltenia_ovifera', 
-               'haliclona_oculata',
-               'orange_sponge_crust')
+               'haliclona_oculata'
+              )
 
 
 substrate <- substrate |>
