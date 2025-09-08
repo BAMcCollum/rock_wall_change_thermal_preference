@@ -1,44 +1,44 @@
 coefficients_species,gen_spp,co_occuring_species
-alcyonium_sub,Alcyonium siderium,Alcyonium digitatum
-anomia_spp,Anomia simplex,Anomia simplex
+alcyonium_siderium,Alcyonium siderium,Alcyonium digitatum
+anomia_simplex,Anomia simplex,Anomia simplex
 aplidium_glabrum,Aplidium glabrum,Aplidium glabrum
 balanus_balanus,Balanus balanus,Semibalanus balanoides
 bare_space_rock,,
 boltenia_echinata,Boltenia echinata,Boltenia echinata
 boltenia_ovifera,Boltenia ovifera,Boltenia ovifera
-botrylloides_sp,Botrylloides violaceus,Botrylloides violaceus
+botrylloides_violaceus,Botrylloides violaceus,Botrylloides violaceus
 botryllus_schlosseri,Botryllus schlosseri,Botryllus schlosseri
-brown_algae_sub,,
-clathromorphum_sp,Clathromorphum circumscriptum,
-cliona_spp,Cliona celata,
-dendrodoa_carnea,Dendrodoa carnea,
-didemnum_albidum,Didemnum albidum,
-didemnum_vexillum,Didemnum vexillum,
+brown_algae,,
+clathromorphum_circumscriptum,Clathromorphum circumscriptum,Clathromorphum circumscriptum
+cliona_celata,Cliona celata,Cliona celata
+dendrodoa_carnea,Dendrodoa carnea,Dendrodoa carnea
+didemnum_albidum,Didemnum albidum,Didemnum albidum
+didemnum_vexillum,Didemnum vexillum,Didemnum vexillum
 diplosoma_listerianum,Diplosoma listerianum,Diplosoma listerianum
 edwardsiella_lineata,Edwardsiella lineata,Edwardsiella lineata
 encrusting_bryozoan,,
-erect_bryozoan_sub,,
-green_algae_sub,,
+erect_bryozoan,,
+green_algae,,
 halichondria_panicea,Halichondria (Halichondria) panicea,Halichondria (Halichondria) panicea
 haliclona_oculata,Haliclona (Haliclona) oculata,Haliclona (Haliclona) oculata
-halisarca_nahantensis,,
+halisarca_nahantensis,Halisarca nahantensis,Halisarca nahantensis
 halocynthia_pyriformis,Halocynthia pyriformis,Halocynthia pyriformis
 hyd_bry_complex,,
-hydroid_sub,,
-hymedesmia_sp,Hymedesmia (Hymedesmia) paupertas,
-isodictya_spp,Isodictya palmata,
-leucosolenia_spp,Leucosolenia botryoides,
-lithothamnion_spp,Lithothamnion glaciale,
-metridium_sub,Metridium senile,Metridium senile
+hydroids,,
+hymedesmia_paupertas,Hymedesmia (Hymedesmia) paupertas,Hymedesmia (Hymedesmia) paupertas
+isodictya_deichmannae,Isodictya deichmannae,Isodictya palmata
+leucosolenia_botryoides,Leucosolenia botryoides,Leucosolenia botryoides
+lithothamnion_glaciale,Lithothamnion glaciale,Lithothamnion glaciale
+metridium_senile,Metridium senile,Metridium senile
 modiolus_modiolus,Modiolus modiolus,Modiolus modiolus
-molgula_citrina,Molgula citrina,
+molgula_citrina,Molgula citrina,Molgula citrina
 mytilus_edulis,Mytilus edulis,Mytilus edulis
 orange_sponge_crust,,
-peysonnelia,Peyssonnelia rosenvingei,
-phymatolithon_sp,,
-red_algae_sub,,
+Waernia_mirabilis,Waernia mirabilis,Peysonnelia rosenvingei
+phymatolithon_scabriusculum,Phymatolithon lamii,Phymatolithon rugulosum
+red_algae,,
 scypha_sp,,
-spirorbis_spp,Spirorbis (Spirorbis) spirorbis,
+spirorbis_spp,Spirorbis (Spirorbis) spirorbis,Spirorbis (Spirorbis) spirorbis
 styela_sp,Styela clava,Styela clava
 tube_complex,,
-tubularia_sub,Ectopleura crocea,
+tubularia_sub,,
