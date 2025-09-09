@@ -54,7 +54,7 @@ glance(mod2)
 
 #Mod3
 check_model(mod3)
-check_normality(mod3) #Non-normality of residuals detected (p = 0.028).
+check_normality(mod3) 
 
 anova(mod3)
 Anova(mod3)
@@ -77,14 +77,14 @@ layer_comp <- purrr:::map(mod_list,
 gt::gt(layer_comp)
 
 
-lm_eqn <- function(df){
-  m <- lm(estimate ~ BO21_tempmax_bdmin_mean, data = coefs_with_indicies);
-  eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2, 
-                   list(a = format(unname(coef(m)[1]), digits = 2),
-                        b = format(unname(coef(m)[2]), digits = 2),
-                        r2 = format(summary(m)$r.squared, digits = 3)))
-  as.character(as.expression(eq));
-}
+#lm_eqn <- function(df){
+#  m <- lm(estimate ~ BO21_tempmax_bdmin_mean, data = coefs_with_indicies);
+#  eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2, 
+#                   list(a = format(unname(coef(m)[1]), digits = 2),
+#                        b = format(unname(coef(m)[2]), digits = 2),
+#                        r2 = format(summary(m)$r.squared, digits = 3)))
+#  as.character(as.expression(eq));
+#}
 
 ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmin_mean, estimate, label = gen_spp))+
   geom_point()+
