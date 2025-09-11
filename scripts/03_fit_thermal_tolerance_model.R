@@ -87,15 +87,16 @@ gt::gt(layer_comp)
 #}
 
 ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmin_mean, estimate, label = species_name))+
+  geom_hline(yintercept=0.0, linetype='dashed', linewidth = 1.5, colour='orange') +
+  geom_vline(xintercept=17.4, linewidth = 2, colour='green') +
+  geom_vline(xintercept=14.07, linewidth = 2, colour='turquoise') +
   geom_point()+
   stat_smooth(method = "lm")+
-  geom_text_repel(size = 6, fontface = "italic", max.overlaps  = 50)+
+  geom_text_repel(size = 6, fontface = "italic", 
+                  max.overlaps = 30, seed = 31415)+
   #annotate("text", x = 22.5, y = 0.2, label = lm_eqn(coefs_with_indicies), parse = TRUE, colour = "red")+
   theme_classic(base_size = 20)+
   labs(x = "Average Thermal Maxima (Occupancy derived max temp at species min depth) in (°C)",  
-       y = "Coefficient of Change over 42 years")+
-  geom_hline(yintercept=0.0, linetype='dashed', linewidth = 1.5, colour='orange') +
-  geom_vline(xintercept=17.4, linewidth = 2, colour='green') +
-  geom_vline(xintercept=14.07, linewidth = 2, colour='turquoise')
+       y = "Coefficient of Change over 42 years") 
 
 ggsave("figures/coefs_with_indicies.jpg", width = 12, height = 8)
