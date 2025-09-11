@@ -13,6 +13,13 @@ library(glue)
 source("scripts/load_data_and_provide_constants.R")
 fitted_curves <- read_csv("data/fitted_long_ordbetareg.csv")
 
+# add corrected species names
+dict <- read_csv("data/co_occuring_species_20250911.csv") |>
+  rename(species = coefficients_species)
+
+fitted_curves <- left_join(fitted_curves, dict)
+substrate_long <- left_join(substrate_long, dict)
+  
 # plot all species
 species_data_as_list <- 
   substrate_long |>
@@ -28,6 +35,9 @@ species_data_as_list <-
     
     sp <- gsub("_", " ", .x$species[1])
     sp <- stringr::str_to_sentence(sp)
+    
+    # correct some species names
+    if(!is.na(.x$species_name[1])) sp <- .x$species_name[1]
     
     
     ggplot(data = .x,
