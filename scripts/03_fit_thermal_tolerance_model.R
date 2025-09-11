@@ -86,10 +86,10 @@ gt::gt(layer_comp)
 #  as.character(as.expression(eq));
 #}
 
-ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmin_mean, estimate, label = gen_spp))+
+ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmin_mean, estimate, label = species_name))+
   geom_point()+
   stat_smooth(method = "lm")+
-  geom_text_repel(size = 6, fontface = "italic")+
+  geom_text_repel(size = 6, fontface = "italic", max.overlaps  = 50)+
   #annotate("text", x = 22.5, y = 0.2, label = lm_eqn(coefs_with_indicies), parse = TRUE, colour = "red")+
   theme_classic(base_size = 20)+
   labs(x = "Average Thermal Maxima (Occupancy derived max temp at species min depth) in (°C)",  
@@ -98,4 +98,4 @@ ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmin_mean, estimate, label = gen_s
   geom_vline(xintercept=17.4, linewidth = 2, colour='green') +
   geom_vline(xintercept=14.07, linewidth = 2, colour='turquoise')
 
-ggsave("figures/coefs_with_indicies.jpg")
+ggsave("figures/coefs_with_indicies.jpg", width = 12, height = 8)

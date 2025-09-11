@@ -6,7 +6,7 @@
 
 pacman::p_load(dplyr, readr, ggplot2)
 
-dict <- read_csv("data/co_occuring_species_20250908.csv") #remake once "indices" is updated
+dict <- read_csv("data/co_occuring_species_20250911.csv") #remake once "indices" is updated
 sp_coefs <- read_csv("data/change_coefficients_ordbetareg.csv")
 indices <- read_csv("data/Occurrence_based_species_thermal_indicies_Photos_20250605.csv") #wait for Jarrett to update
 
@@ -35,11 +35,11 @@ combined_data <- read_csv("data/coefs_with_indices.csv")
 
 #Figure with std.errors
 combined_data %>%
-  filter (gen_spp != "NA") %>%
+  filter (species_name != "NA") %>%
   arrange(estimate) %>%
-  mutate(gen_spp=factor(gen_spp, levels=gen_spp)) %>%
+  mutate(species_name=factor(species_name, levels=species_name)) %>%
   ggplot() +
-  geom_pointrange(mapping = aes(x=gen_spp, y=estimate, ymin = estimate-std.error, ymax = estimate+std.error)) +
+  geom_pointrange(mapping = aes(x=species_name, y=estimate, ymin = estimate-std.error, ymax = estimate+std.error)) +
   geom_hline(yintercept = 0, lty = 2, color = "grey")+
   coord_flip() +
   theme_bw(base_size = 15)+
@@ -50,9 +50,9 @@ combined_data %>%
 combined_data %>%
   filter (gen_spp != "NA") %>%
   arrange(estimate) %>%
-  mutate(gen_spp=factor(gen_spp, levels=gen_spp)) %>%
+  mutate(species_name=factor(species_name, levels=species_name)) %>%
   ggplot() +
-  geom_pointrange(mapping = aes(x=gen_spp, y=estimate, ymin = conf.low, ymax = conf.high)) +
+  geom_pointrange(mapping = aes(x=species_name, y=estimate, ymin = conf.low, ymax = conf.high)) +
   geom_hline(yintercept = 0, lty = 2, color = "orange", linewidth = 2)+
   coord_flip() +
   theme_bw(base_size = 20)+
@@ -61,6 +61,7 @@ combined_data %>%
   theme(axis.text.y=element_text(face="italic"))
 
 
-ggsave(glue::glue("figures/coefs_of_change.jpg"))
+ggsave(glue::glue("figures/coefs_of_change.jpg"),
+       height = 7, width = 8)
 
 
