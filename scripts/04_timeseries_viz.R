@@ -35,9 +35,14 @@ species_data_as_list <-
     
     sp <- gsub("_", " ", .x$species[1])
     sp <- stringr::str_to_sentence(sp)
+    sp <- gsub(" sub$", "", sp)
+    y_lab <- glue("Percent Cover of {sp}")
     
     # correct some species names
-    if(!is.na(.x$species_name[1])) sp <- .x$species_name[1]
+    if(!is.na(.x$species_name[1])) {
+      sp <- .x$species_name[1]
+      y_lab <- glue("Percent Cover of *{sp}*")
+    }
     
     
     ggplot(data = .x,
@@ -47,7 +52,7 @@ species_data_as_list <-
       facet_wrap(~area) +
       labs(x = "Year",
            color = "Site",
-           y = glue("Percent Cover of *{sp}*"))+ #sub in species name
+           y = y_lab)+ #sub in species name
       theme(axis.title.y = ggtext::element_markdown())
     
     ggsave(glue("figures/raw_timeseries/{sp}.jpg"),
