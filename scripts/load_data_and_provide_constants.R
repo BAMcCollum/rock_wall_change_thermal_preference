@@ -17,9 +17,10 @@ substrate <-
   group_by(site, year) |>
   slice_tail() |> # get second sample point if there are 2
   ungroup() |>
-  mutate(#hydroid = hydroid_sub + tubularia_sub,
-         #isodictya_deichmannae = isodictya_spp + orange_sponge_crust,
-         year_cent = year - mean(year))
+  mutate(hydroid = hydroid_sub + tubularia_sub,
+         isodictya_deichmannae = isodictya_spp + orange_sponge_crust,
+         year_cent = year - mean(year)) |>
+  select(-hydroid_sub, -tubularia_sub, -isodictya_spp, -orange_sponge_crust)
 
          
 
