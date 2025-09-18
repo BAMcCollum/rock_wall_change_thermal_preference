@@ -41,7 +41,7 @@ substrate <- substrate |>
 substrate_long <- substrate |>
   
   # pivot longer so attributes (i.e., species) are in rows  
-  pivot_longer(c(alcyonium_sub : tubularia_sub),
+  pivot_longer(c(alcyonium_sub : isodictya_deichmannae),
                names_to = "species",
                values_to = "proportion")
 
