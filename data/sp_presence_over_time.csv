@@ -1,0 +1,301 @@
+species,area,depth_m,num_obs
+alcyonium_sub,Dive Beach,7,133
+alcyonium_sub,Halfway Rock Inner,7,33
+alcyonium_sub,Halfway Rock Inner,16,81
+alcyonium_sub,Halfway Rock Outer,9,35
+alcyonium_sub,Halfway Rock Outer,10,27
+alcyonium_sub,Halfway Rock Outer,12,22
+alcyonium_sub,Halfway Rock Outer,15,28
+alcyonium_sub,Shag Rocks Inner,8,80
+alcyonium_sub,Shag Rocks Outer,8,45
+alcyonium_sub,Shag Rocks Outer,9,36
+anomia_spp,Dive Beach,7,133
+anomia_spp,Halfway Rock Inner,7,33
+anomia_spp,Halfway Rock Inner,16,81
+anomia_spp,Halfway Rock Outer,9,35
+anomia_spp,Halfway Rock Outer,10,27
+anomia_spp,Halfway Rock Outer,12,22
+anomia_spp,Halfway Rock Outer,15,28
+anomia_spp,Shag Rocks Inner,8,80
+anomia_spp,Shag Rocks Outer,8,45
+anomia_spp,Shag Rocks Outer,9,36
+aplidium_glabrum,Dive Beach,7,133
+aplidium_glabrum,Halfway Rock Inner,7,33
+aplidium_glabrum,Halfway Rock Inner,16,81
+aplidium_glabrum,Halfway Rock Outer,9,35
+aplidium_glabrum,Halfway Rock Outer,10,27
+aplidium_glabrum,Halfway Rock Outer,12,22
+aplidium_glabrum,Halfway Rock Outer,15,28
+aplidium_glabrum,Shag Rocks Inner,8,80
+aplidium_glabrum,Shag Rocks Outer,8,45
+aplidium_glabrum,Shag Rocks Outer,9,36
+balanus_balanus,Dive Beach,7,133
+balanus_balanus,Halfway Rock Inner,7,33
+balanus_balanus,Halfway Rock Inner,16,81
+balanus_balanus,Halfway Rock Outer,9,35
+balanus_balanus,Halfway Rock Outer,10,27
+balanus_balanus,Halfway Rock Outer,12,22
+balanus_balanus,Halfway Rock Outer,15,28
+balanus_balanus,Shag Rocks Inner,8,80
+balanus_balanus,Shag Rocks Outer,8,45
+balanus_balanus,Shag Rocks Outer,9,36
+bare_space_rock,Dive Beach,7,133
+bare_space_rock,Halfway Rock Inner,7,33
+bare_space_rock,Halfway Rock Inner,16,81
+bare_space_rock,Halfway Rock Outer,9,35
+bare_space_rock,Halfway Rock Outer,10,27
+bare_space_rock,Halfway Rock Outer,12,22
+bare_space_rock,Halfway Rock Outer,15,28
+bare_space_rock,Shag Rocks Inner,8,80
+bare_space_rock,Shag Rocks Outer,8,45
+bare_space_rock,Shag Rocks Outer,9,36
+boltenia_echinata,Dive Beach,7,133
+boltenia_echinata,Halfway Rock Inner,7,33
+boltenia_echinata,Halfway Rock Inner,16,81
+boltenia_echinata,Halfway Rock Outer,9,35
+boltenia_echinata,Halfway Rock Outer,10,27
+boltenia_echinata,Halfway Rock Outer,12,22
+boltenia_echinata,Halfway Rock Outer,15,28
+boltenia_echinata,Shag Rocks Inner,8,80
+boltenia_echinata,Shag Rocks Outer,8,45
+boltenia_echinata,Shag Rocks Outer,9,36
+botrylloides_sp,Dive Beach,7,133
+botrylloides_sp,Halfway Rock Inner,7,33
+botrylloides_sp,Halfway Rock Inner,16,81
+botrylloides_sp,Halfway Rock Outer,9,35
+botrylloides_sp,Halfway Rock Outer,10,27
+botrylloides_sp,Halfway Rock Outer,12,22
+botrylloides_sp,Halfway Rock Outer,15,28
+botrylloides_sp,Shag Rocks Inner,8,80
+botrylloides_sp,Shag Rocks Outer,8,45
+botrylloides_sp,Shag Rocks Outer,9,36
+clathromorphum_sp,Dive Beach,7,133
+clathromorphum_sp,Halfway Rock Inner,7,33
+clathromorphum_sp,Halfway Rock Inner,16,81
+clathromorphum_sp,Halfway Rock Outer,9,35
+clathromorphum_sp,Halfway Rock Outer,10,27
+clathromorphum_sp,Halfway Rock Outer,12,22
+clathromorphum_sp,Halfway Rock Outer,15,28
+clathromorphum_sp,Shag Rocks Inner,8,80
+clathromorphum_sp,Shag Rocks Outer,8,45
+clathromorphum_sp,Shag Rocks Outer,9,36
+cliona_spp,Dive Beach,7,133
+cliona_spp,Halfway Rock Inner,7,33
+cliona_spp,Halfway Rock Inner,16,81
+cliona_spp,Halfway Rock Outer,9,35
+cliona_spp,Halfway Rock Outer,10,27
+cliona_spp,Halfway Rock Outer,12,22
+cliona_spp,Halfway Rock Outer,15,28
+cliona_spp,Shag Rocks Inner,8,80
+cliona_spp,Shag Rocks Outer,8,45
+cliona_spp,Shag Rocks Outer,9,36
+didemnum_albidum,Dive Beach,7,133
+didemnum_albidum,Halfway Rock Inner,7,33
+didemnum_albidum,Halfway Rock Inner,16,81
+didemnum_albidum,Halfway Rock Outer,9,35
+didemnum_albidum,Halfway Rock Outer,10,27
+didemnum_albidum,Halfway Rock Outer,12,22
+didemnum_albidum,Halfway Rock Outer,15,28
+didemnum_albidum,Shag Rocks Inner,8,80
+didemnum_albidum,Shag Rocks Outer,8,45
+didemnum_albidum,Shag Rocks Outer,9,36
+didemnum_vexillum,Dive Beach,7,133
+didemnum_vexillum,Halfway Rock Inner,7,33
+didemnum_vexillum,Halfway Rock Inner,16,81
+didemnum_vexillum,Halfway Rock Outer,9,35
+didemnum_vexillum,Halfway Rock Outer,10,27
+didemnum_vexillum,Halfway Rock Outer,12,22
+didemnum_vexillum,Halfway Rock Outer,15,28
+didemnum_vexillum,Shag Rocks Inner,8,80
+didemnum_vexillum,Shag Rocks Outer,8,45
+didemnum_vexillum,Shag Rocks Outer,9,36
+diplosoma_listerianum,Dive Beach,7,133
+diplosoma_listerianum,Halfway Rock Inner,7,33
+diplosoma_listerianum,Halfway Rock Inner,16,81
+diplosoma_listerianum,Halfway Rock Outer,9,35
+diplosoma_listerianum,Halfway Rock Outer,10,27
+diplosoma_listerianum,Halfway Rock Outer,12,22
+diplosoma_listerianum,Halfway Rock Outer,15,28
+diplosoma_listerianum,Shag Rocks Inner,8,80
+diplosoma_listerianum,Shag Rocks Outer,8,45
+diplosoma_listerianum,Shag Rocks Outer,9,36
+edwardsiella_lineata,Dive Beach,7,133
+edwardsiella_lineata,Halfway Rock Inner,7,33
+edwardsiella_lineata,Halfway Rock Inner,16,81
+edwardsiella_lineata,Halfway Rock Outer,9,35
+edwardsiella_lineata,Halfway Rock Outer,10,27
+edwardsiella_lineata,Halfway Rock Outer,12,22
+edwardsiella_lineata,Halfway Rock Outer,15,28
+edwardsiella_lineata,Shag Rocks Inner,8,80
+edwardsiella_lineata,Shag Rocks Outer,8,45
+edwardsiella_lineata,Shag Rocks Outer,9,36
+encrusting_bryozoan,Dive Beach,7,133
+encrusting_bryozoan,Halfway Rock Inner,7,33
+encrusting_bryozoan,Halfway Rock Inner,16,81
+encrusting_bryozoan,Halfway Rock Outer,9,35
+encrusting_bryozoan,Halfway Rock Outer,10,27
+encrusting_bryozoan,Halfway Rock Outer,12,22
+encrusting_bryozoan,Halfway Rock Outer,15,28
+encrusting_bryozoan,Shag Rocks Inner,8,80
+encrusting_bryozoan,Shag Rocks Outer,8,45
+encrusting_bryozoan,Shag Rocks Outer,9,36
+erect_bryozoan_sub,Dive Beach,7,133
+erect_bryozoan_sub,Halfway Rock Inner,7,33
+erect_bryozoan_sub,Halfway Rock Inner,16,81
+erect_bryozoan_sub,Halfway Rock Outer,9,35
+erect_bryozoan_sub,Halfway Rock Outer,10,27
+erect_bryozoan_sub,Halfway Rock Outer,12,22
+erect_bryozoan_sub,Halfway Rock Outer,15,28
+erect_bryozoan_sub,Shag Rocks Inner,8,80
+erect_bryozoan_sub,Shag Rocks Outer,8,45
+erect_bryozoan_sub,Shag Rocks Outer,9,36
+green_algae_sub,Dive Beach,7,133
+green_algae_sub,Halfway Rock Inner,7,33
+green_algae_sub,Halfway Rock Inner,16,81
+green_algae_sub,Halfway Rock Outer,9,35
+green_algae_sub,Halfway Rock Outer,10,27
+green_algae_sub,Halfway Rock Outer,12,22
+green_algae_sub,Halfway Rock Outer,15,28
+green_algae_sub,Shag Rocks Inner,8,80
+green_algae_sub,Shag Rocks Outer,8,45
+green_algae_sub,Shag Rocks Outer,9,36
+halichondria_panicea,Dive Beach,7,133
+halichondria_panicea,Halfway Rock Inner,7,33
+halichondria_panicea,Halfway Rock Inner,16,81
+halichondria_panicea,Halfway Rock Outer,9,35
+halichondria_panicea,Halfway Rock Outer,10,27
+halichondria_panicea,Halfway Rock Outer,12,22
+halichondria_panicea,Halfway Rock Outer,15,28
+halichondria_panicea,Shag Rocks Inner,8,80
+halichondria_panicea,Shag Rocks Outer,8,45
+halichondria_panicea,Shag Rocks Outer,9,36
+halisarca_nahantensis,Dive Beach,7,133
+halisarca_nahantensis,Halfway Rock Inner,7,33
+halisarca_nahantensis,Halfway Rock Inner,16,81
+halisarca_nahantensis,Halfway Rock Outer,9,35
+halisarca_nahantensis,Halfway Rock Outer,10,27
+halisarca_nahantensis,Halfway Rock Outer,12,22
+halisarca_nahantensis,Halfway Rock Outer,15,28
+halisarca_nahantensis,Shag Rocks Inner,8,80
+halisarca_nahantensis,Shag Rocks Outer,8,45
+halisarca_nahantensis,Shag Rocks Outer,9,36
+hyd_bry_complex,Dive Beach,7,133
+hyd_bry_complex,Halfway Rock Inner,7,33
+hyd_bry_complex,Halfway Rock Inner,16,81
+hyd_bry_complex,Halfway Rock Outer,9,35
+hyd_bry_complex,Halfway Rock Outer,10,27
+hyd_bry_complex,Halfway Rock Outer,12,22
+hyd_bry_complex,Halfway Rock Outer,15,28
+hyd_bry_complex,Shag Rocks Inner,8,80
+hyd_bry_complex,Shag Rocks Outer,8,45
+hyd_bry_complex,Shag Rocks Outer,9,36
+hydroid,Dive Beach,7,133
+hydroid,Halfway Rock Inner,7,33
+hydroid,Halfway Rock Inner,16,81
+hydroid,Halfway Rock Outer,9,35
+hydroid,Halfway Rock Outer,10,27
+hydroid,Halfway Rock Outer,12,22
+hydroid,Halfway Rock Outer,15,28
+hydroid,Shag Rocks Inner,8,80
+hydroid,Shag Rocks Outer,8,45
+hydroid,Shag Rocks Outer,9,36
+isodictya_deichmannae,Dive Beach,7,133
+isodictya_deichmannae,Halfway Rock Inner,7,33
+isodictya_deichmannae,Halfway Rock Inner,16,81
+isodictya_deichmannae,Halfway Rock Outer,9,35
+isodictya_deichmannae,Halfway Rock Outer,10,27
+isodictya_deichmannae,Halfway Rock Outer,12,22
+isodictya_deichmannae,Halfway Rock Outer,15,28
+isodictya_deichmannae,Shag Rocks Inner,8,80
+isodictya_deichmannae,Shag Rocks Outer,8,45
+isodictya_deichmannae,Shag Rocks Outer,9,36
+leucosolenia_spp,Dive Beach,7,133
+leucosolenia_spp,Halfway Rock Inner,7,33
+leucosolenia_spp,Halfway Rock Inner,16,81
+leucosolenia_spp,Halfway Rock Outer,9,35
+leucosolenia_spp,Halfway Rock Outer,10,27
+leucosolenia_spp,Halfway Rock Outer,12,22
+leucosolenia_spp,Halfway Rock Outer,15,28
+leucosolenia_spp,Shag Rocks Inner,8,80
+leucosolenia_spp,Shag Rocks Outer,8,45
+leucosolenia_spp,Shag Rocks Outer,9,36
+lithothamnion_spp,Dive Beach,7,133
+lithothamnion_spp,Halfway Rock Inner,7,33
+lithothamnion_spp,Halfway Rock Inner,16,81
+lithothamnion_spp,Halfway Rock Outer,9,35
+lithothamnion_spp,Halfway Rock Outer,10,27
+lithothamnion_spp,Halfway Rock Outer,12,22
+lithothamnion_spp,Halfway Rock Outer,15,28
+lithothamnion_spp,Shag Rocks Inner,8,80
+lithothamnion_spp,Shag Rocks Outer,8,45
+lithothamnion_spp,Shag Rocks Outer,9,36
+metridium_sub,Dive Beach,7,133
+metridium_sub,Halfway Rock Inner,7,33
+metridium_sub,Halfway Rock Inner,16,81
+metridium_sub,Halfway Rock Outer,9,35
+metridium_sub,Halfway Rock Outer,10,27
+metridium_sub,Halfway Rock Outer,12,22
+metridium_sub,Halfway Rock Outer,15,28
+metridium_sub,Shag Rocks Inner,8,80
+metridium_sub,Shag Rocks Outer,8,45
+metridium_sub,Shag Rocks Outer,9,36
+modiolus_modiolus,Dive Beach,7,133
+modiolus_modiolus,Halfway Rock Inner,7,33
+modiolus_modiolus,Halfway Rock Inner,16,81
+modiolus_modiolus,Halfway Rock Outer,9,35
+modiolus_modiolus,Halfway Rock Outer,10,27
+modiolus_modiolus,Halfway Rock Outer,12,22
+modiolus_modiolus,Halfway Rock Outer,15,28
+modiolus_modiolus,Shag Rocks Inner,8,80
+modiolus_modiolus,Shag Rocks Outer,8,45
+modiolus_modiolus,Shag Rocks Outer,9,36
+mytilus_edulis,Dive Beach,7,133
+mytilus_edulis,Halfway Rock Inner,7,33
+mytilus_edulis,Halfway Rock Inner,16,81
+mytilus_edulis,Halfway Rock Outer,9,35
+mytilus_edulis,Halfway Rock Outer,10,27
+mytilus_edulis,Halfway Rock Outer,12,22
+mytilus_edulis,Halfway Rock Outer,15,28
+mytilus_edulis,Shag Rocks Inner,8,80
+mytilus_edulis,Shag Rocks Outer,8,45
+mytilus_edulis,Shag Rocks Outer,9,36
+peysonnelia,Dive Beach,7,133
+peysonnelia,Halfway Rock Inner,7,33
+peysonnelia,Halfway Rock Inner,16,81
+peysonnelia,Halfway Rock Outer,9,35
+peysonnelia,Halfway Rock Outer,10,27
+peysonnelia,Halfway Rock Outer,12,22
+peysonnelia,Halfway Rock Outer,15,28
+peysonnelia,Shag Rocks Inner,8,80
+peysonnelia,Shag Rocks Outer,8,45
+peysonnelia,Shag Rocks Outer,9,36
+phymatolithon_sp,Dive Beach,7,133
+phymatolithon_sp,Halfway Rock Inner,7,33
+phymatolithon_sp,Halfway Rock Inner,16,81
+phymatolithon_sp,Halfway Rock Outer,9,35
+phymatolithon_sp,Halfway Rock Outer,10,27
+phymatolithon_sp,Halfway Rock Outer,12,22
+phymatolithon_sp,Halfway Rock Outer,15,28
+phymatolithon_sp,Shag Rocks Inner,8,80
+phymatolithon_sp,Shag Rocks Outer,8,45
+phymatolithon_sp,Shag Rocks Outer,9,36
+red_algae_sub,Dive Beach,7,133
+red_algae_sub,Halfway Rock Inner,7,33
+red_algae_sub,Halfway Rock Inner,16,81
+red_algae_sub,Halfway Rock Outer,9,35
+red_algae_sub,Halfway Rock Outer,10,27
+red_algae_sub,Halfway Rock Outer,12,22
+red_algae_sub,Halfway Rock Outer,15,28
+red_algae_sub,Shag Rocks Inner,8,80
+red_algae_sub,Shag Rocks Outer,8,45
+red_algae_sub,Shag Rocks Outer,9,36
+tube_complex,Dive Beach,7,133
+tube_complex,Halfway Rock Inner,7,33
+tube_complex,Halfway Rock Inner,16,81
+tube_complex,Halfway Rock Outer,9,35
+tube_complex,Halfway Rock Outer,10,27
+tube_complex,Halfway Rock Outer,12,22
+tube_complex,Halfway Rock Outer,15,28
+tube_complex,Shag Rocks Inner,8,80
+tube_complex,Shag Rocks Outer,8,45
+tube_complex,Shag Rocks Outer,9,36
