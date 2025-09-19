@@ -13,7 +13,7 @@ library(ggplot2)
 # load the data
 source("scripts/load_data_and_provide_constants.R")
 
-dict <- read_csv("data/co_occuring_species_20250908.csv")
+dict <- read_csv("data/co_occuring_species_20250911.csv")
 
 substrate_long <- substrate_long |>
   rename(coefficients_species = species)
