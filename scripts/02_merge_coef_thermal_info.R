@@ -6,9 +6,9 @@
 
 pacman::p_load(dplyr, readr, ggplot2)
 
-dict <- read_csv("data/co_occuring_species_20250911.csv") #remake once "indices" is updated
+dict <- read_csv("data/co_occuring_species_20250919.csv") #remake once "indices" is updated
 sp_coefs <- read_csv("data/change_coefficients_ordbetareg.csv")
-indices <- read_csv("data/Occurrence_based_species_thermal_indicies_Photos_20250605.csv") #wait for Jarrett to update
+indices <- read_csv("data/Occurrence_based_species_thermal_indicies_Photos_20250919.csv") #wait for Jarrett to update
 
 
 # First, translate indices species into coef species names
@@ -18,10 +18,16 @@ indices_joined <- indices |>
   filter(!is.na(species)) |>
   relocate(species)
 
-# Then, join the indices to the coefs
+indicesnot_joined <- anti_join(dict, indices) |>
+  pull(gen_spp)
 
+# Then, join the indices to the coefs
 combined_data <- left_join(sp_coefs, indices_joined) |>
   janitor::remove_empty(which = "cols")
+
+not_joined <- anti_join(sp_coefs, indices_joined) |>
+  pull(species) |> unique()
+
 
 #Rename Halichondria (Halichondria) panicea to Halichondria panicea 
 combined_data$gen_spp[combined_data$gen_spp==
@@ -29,7 +35,7 @@ combined_data$gen_spp[combined_data$gen_spp==
 
 write_csv(combined_data, "data/coefs_with_indices.csv")
 
-combined_data <- read_csv("data/coefs_with_indices.csv")
+#combined_data <- read_csv("data/coefs_with_indices.csv")
 
 #combined_data <- na.omit(combined_data) 
 
