@@ -21,7 +21,7 @@ source("scripts/load_data_and_provide_constants.R")
 
 
 coefs_with_indicies <- read_csv("data/coefs_with_indices.csv")
-View (coefs_with_indicies)
+#View (coefs_with_indicies)
 
 
 ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmean_mean, estimate))+
@@ -99,4 +99,4 @@ ggplot(coefs_with_indicies, aes(BO21_tempmax_bdmin_mean, estimate, label = speci
   labs(x = "Average Thermal Maxima (Occupancy derived max temp at species min depth) in (°C)",  
        y = "Coefficient of Change over 42 years") 
 
-ggsave("figures/coefs_with_indicies.jpg", width = 12, height = 8)
+ggsave("figures/coefs_with_indicies.jpg", width = 12, height = 9)
