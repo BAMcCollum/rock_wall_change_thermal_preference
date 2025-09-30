@@ -8,7 +8,7 @@ coefout <- read_csv("data/coefs_with_indices.csv")
 View(coefout)
 # plot data ---------------------------------------------------------------
 
-#color1 <- "#782391"
+
 color2 <- "#782391"
 coefout %>% 
   filter(hasSebensData) |>
@@ -39,7 +39,11 @@ coefout %>%
   labs(x=NULL, y= expression(paste("Water Temperature in ", "\u00b0C"))) +
   theme_classic() +
   theme(#plot.margin = margin(l=25,b=5,unit="pt"),
-    axis.text.x = element_text(angle = -90, hjust = 0))
+    axis.text.x = element_text(angle = -90, hjust = 0))+
+  geom_hline(yintercept=c(14.07, 17.4), linetype='dashed', color=c('turquoise', 'green')) +
+  theme(axis.text.x = element_text(face = "italic")) +
+  theme(axis.text=element_text(size=12),
+        axis.title=element_text(size=14))
 
 ggsave("figures/thermal_preference_ranges.jpg")
 
