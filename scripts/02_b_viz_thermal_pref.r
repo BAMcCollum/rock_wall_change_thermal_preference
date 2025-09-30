@@ -11,22 +11,18 @@ View(coefout)
 
 color2 <- "#782391"
 coefout %>% 
-  filter(hasSebensData) |>
+  filter(!is.na(gen_spp)) |>
   mutate(gen_spp = forcats::fct_reorder(gen_spp, BO21_tempmax_bdmean_mean) ) %>%
   
   ggplot(aes(x=gen_spp)) +
   
   
-  geom_point(aes(y=BO21_tempmax_bdmean_q5),  color = color2, alpha=.5,
-             position = position_nudge(x = 0.25))+
-  geom_point(aes(y=BO21_tempmax_bdmean_q95), color = color2, alpha=.5,
-             position = position_nudge(x = 0.25)) +
-  geom_point(aes(y=BO21_tempmax_bdmean_mean), color = color2, alpha=1, size=1.5,
-             position = position_nudge(x = 0.25)) +
+  geom_point(aes(y=BO21_tempmax_bdmean_q5),  color = color2, alpha=.5)+
+  geom_point(aes(y=BO21_tempmax_bdmean_q95), color = color2, alpha=.5)+
+  geom_point(aes(y=BO21_tempmax_bdmean_mean), color = color2, alpha=1, size=2)+
   geom_segment(aes(xend=gen_spp,
                    y=BO21_tempmax_bdmean_q5,
-                   yend=BO21_tempmax_bdmean_q95), color = color2, alpha=.5,
-               position = position_nudge(x = 0.25)) +
+                   yend=BO21_tempmax_bdmean_q95), color = color2, alpha=.5)+
 #  annotate(geom="text",
 #           x=3, y=30, 
 #           hjust=-0.1, vjust=0.2,
@@ -42,8 +38,8 @@ coefout %>%
     axis.text.x = element_text(angle = -90, hjust = 0))+
   geom_hline(yintercept=c(14.07, 17.4), linetype='dashed', color=c('turquoise', 'green')) +
   theme(axis.text.x = element_text(face = "italic")) +
-  theme(axis.text=element_text(size=12),
-        axis.title=element_text(size=14))
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=18))
 
 ggsave("figures/thermal_preference_ranges.jpg")
 
