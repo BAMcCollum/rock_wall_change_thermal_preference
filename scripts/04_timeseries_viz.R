@@ -14,7 +14,7 @@ source("scripts/load_data_and_provide_constants.R")
 fitted_curves <- read_csv("data/fitted_long_ordbetareg.csv")
 
 # add corrected species names
-dict <- read_csv("data/co_occuring_species_20250911.csv") |>
+dict <- read_csv("data/co_occuring_species_20250919.csv") |>
   rename(species = coefficients_species)
 
 fitted_curves <- left_join(fitted_curves, dict)
